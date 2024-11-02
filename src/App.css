@@ -11,6 +11,8 @@
   width: 100%;
   height: 90vh;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .mainScreenDecoration{
   width: 170px;
@@ -18,5 +20,10 @@
   background-color: #49B3FB;
   position: absolute;
   top: -84px;
+  right: -200px;
+}
+.mainScreenImg{
+  position: absolute;
+  width: 550px;
   right: -200px;
 }
