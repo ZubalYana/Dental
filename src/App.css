@@ -58,6 +58,12 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.mainScreen_btn:hover{
+  background-color: #fff;
+  color: #49B3FB;
+  box-shadow: 0 0 20px #49B3FB;
 }
 .watchVideo_btn{
   width: 170px;
