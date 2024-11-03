@@ -4,7 +4,7 @@ import mainScreenImg from '/main screen img.png';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import abousUsimg from '/about us screen img.png';
 library.add(faPlay);
 
 function App() {
@@ -35,7 +35,21 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="aboutUsScreen"></div>
+        <div className="aboutUsScreen">
+          
+          <img src={abousUsimg} alt="abousUsimg" className="abousUsimg" />
+
+          <div className="aboutUs_text">
+            <div className="beforeTitle">About Us</div>
+            <div className="title">
+            Best Dental Clinic You Can Trust.
+            </div>
+            <div className="subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molesed erat tortor quis. Enim id lobortis massa egestas tortor ac ultrices semper. 
+            </div>
+          </div>
+
+        </div>
       </div>
     </>
   );
