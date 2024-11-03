@@ -5,6 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import abousUsimg from '/about us screen img.png';
+import teethSvg from './assets/teeth.svg';
+import moneySvg from './assets/money.svg';
 library.add(faPlay);
 
 function App() {
@@ -36,7 +38,7 @@ function App() {
           </div>
         </div>
         <div className="aboutUsScreen">
-          
+
           <img src={abousUsimg} alt="abousUsimg" className="abousUsimg" />
 
           <div className="aboutUs_text">
@@ -46,6 +48,16 @@ function App() {
             </div>
             <div className="subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molesed erat tortor quis. Enim id lobortis massa egestas tortor ac ultrices semper. 
+            </div>
+            <div className="advantageCon">
+              <div className="advantageIcon">
+                <img src={teethSvg} alt="teethSvg" className="teethSvg" />
+              </div>
+              <div className="advantageText">
+                <div className="advantageTitle">Complete Dental Care</div>
+                <div className="advantageSubtitle">Lorem ipsum dolor sit amet, consect
+                etur adipiscing elit cursus.  </div>
+              </div>
             </div>
           </div>
 
