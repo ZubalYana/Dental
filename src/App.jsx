@@ -24,22 +24,15 @@ function App() {
             </div>
             <div className="button_video_con">
               <div className="mainScreen_btn">Appointment</div>
-              {/* <div className="watchVideo_btn">
-                <div className="watchVideoIcon">
-                  <FontAwesomeIcon icon={faPlay} />
-                </div>
-                Watch Video
-              </div> */}
-                          <div id="container">
-  <button className="learn-more">
-    <span className="circle" aria-hidden="true">
-    <FontAwesomeIcon icon={faPlay} className='playIcon' />
-    </span>
-    <span className="button-text">Watch Video</span>
-  </button>
-</div>
+              <div id="container">
+                <button className="learn-more">
+                <span className="circle" aria-hidden="true">
+                  <FontAwesomeIcon icon={faPlay} className='playIcon' />
+                </span>
+                <span className="button-text">Watch Video</span>
+                </button>
+              </div>
             </div>
-
           </div>
         </div>
       </div>

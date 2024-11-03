@@ -81,8 +81,6 @@
   font-size: 24px;
   border-radius: 50%;
 }
-
-
 button {
   position: relative;
   display: inline-block;
@@ -96,12 +94,10 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
-
 button.learn-more {
   width: 12rem;
   height: auto;
 }
-
 button.learn-more .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
@@ -115,7 +111,6 @@ button.learn-more .circle {
   align-items: center;
   padding-left: 16px;
 }
-
 button.learn-more .circle .icon {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
@@ -124,7 +119,6 @@ button.learn-more .circle .icon {
   margin: auto;
   background: #fff;
 }
-
 .playIcon{
   color: #fff;
   font-size: 24px;
@@ -143,16 +137,13 @@ button.learn-more .button-text {
   line-height: 1.6;
   text-align: center;
 }
-
 button:hover .circle {
   width: 100%;
 }
-
 button:hover .circle .icon.arrow {
   background: #fff;
   transform: translate(1rem, 0);
 }
-
 button:hover .button-text {
   color: #fff;
 }
