@@ -35,6 +35,7 @@ function App() {
             </div>
           </div>
         </div>
+        <div className="aboutUsScreen"></div>
       </div>
     </>
   );
