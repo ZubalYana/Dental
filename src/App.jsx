@@ -59,6 +59,17 @@ function App() {
                 etur adipiscing elit cursus.  </div>
               </div>
             </div>
+
+            <div className="advantageCon">
+              <div className="advantageIcon">
+                <img src={moneySvg} alt="moneySvg" className="moneySvg" />
+              </div>
+              <div className="advantageText">
+                <div className="advantageTitle">Affordable Price</div>
+                <div className="advantageSubtitle">Lorem ipsum dolor sit amet, consect
+                etur adipiscing elit cursus.  </div>
+              </div>
+            </div>
           </div>
 
         </div>
