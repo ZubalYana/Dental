@@ -248,3 +248,26 @@ button:hover .button-text {
   margin-top: 60px;
 }
 /* our servises */
+
+/* our doctors */
+.ourDoctorsScreen{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.ourDoctorsScreen .title{
+  font-size: 56px;
+}
+.ourDoctorsScreen .subtitle{
+  text-align: center;
+}
+.doctorsCardsCon{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+/* our doctors */

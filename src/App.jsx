@@ -90,6 +90,12 @@ function App() {
           </div>
           
         </div>
+        <div className="ourDoctorsScreen">
+          <div className="beforeTitle">Our Doctors</div>
+          <div className="title">Team Of Professionals</div>
+          <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
+          <div className="doctorsCardsCon"></div>
+        </div>
       </div>
     </>
   );
