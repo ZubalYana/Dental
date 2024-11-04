@@ -108,6 +108,24 @@ function App() {
           ))}
           </div>
         </div>
+        <div className="statisticScreen">
+          <div className="statisticEl">
+            <div className="statisticNumber">20</div>
+            <div className="statisticDescription">Course Published</div>
+          </div>
+          <div className="statisticEl">
+            <div className="statisticNumber">120</div>
+            <div className="statisticDescription">Qualified Staff</div>
+          </div>
+          <div className="statisticEl">
+            <div className="statisticNumber">550</div>
+            <div className="statisticDescription">Happy Patient</div>
+          </div>
+          <div className="statisticEl">
+            <div className="statisticNumber">20</div>
+            <div className="statisticDescription">Years Of Experience</div>
+          </div>
+        </div>
       </div>
     </>
   );
