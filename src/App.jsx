@@ -9,7 +9,9 @@ import abousUsimg from '/about us screen img.png';
 import teethSvg from './assets/teeth.svg';
 import moneySvg from './assets/money.svg';
 import ServisesCard from './components/servicesCard/servicesCard'
-
+import teethGlassSvg from './assets/teethGlass.svg'
+import teethNailSvg from './assets/teethNail.svg'
+import teethShieldSvg from './assets/teethShield.svg'
 function App() {
   return (
     <>
@@ -78,8 +80,12 @@ function App() {
           <div className="title">Our Dental Services</div>
           <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth, free of infections, injuries and other problems with</div>
           <div className="cardsContainer">
-          {['Teeth Checkup', 'Dental Crown', 'Teeth Implants'].map((title, index) => (
-            <ServisesCard key={index} title={title} />
+          {[
+            { title: 'Teeth Checkup', icon: teethGlassSvg },
+            { title: 'Dental Crown', icon: teethNailSvg },
+            { title: 'Teeth Implants', icon: teethShieldSvg },
+          ].map(({ title, icon }, index) => (
+            <ServisesCard key={index} title={title} img={icon} />
           ))}
           </div>
           
