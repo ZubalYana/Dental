@@ -166,6 +166,9 @@ button:hover .button-text {
   justify-content: center;
   align-items: center;
 }
+.aboutUsScreen .title{
+  font-size: 56px;
+}
 .abousUsimg{
   width: 470px;
 }
@@ -231,6 +234,9 @@ button:hover .button-text {
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+}
+.outServicesScreen .title{
+  font-size: 56px;
 }
 .outServicesScreen .subtitle{
   text-align: center;
