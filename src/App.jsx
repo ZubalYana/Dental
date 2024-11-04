@@ -49,8 +49,8 @@ function App() {
             <div className="subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molesed erat tortor quis. Enim id lobortis massa egestas tortor ac ultrices semper. 
             </div>
-            <div className="advantageCon">
-              <div className="advantageIcon">
+            <div className="advantageCon" id='teethAdvantageCon'>
+              <div className="advantageIcon" id='teethIcon'>
                 <img src={teethSvg} alt="teethSvg" className="teethSvg" />
               </div>
               <div className="advantageText">
@@ -60,8 +60,8 @@ function App() {
               </div>
             </div>
 
-            <div className="advantageCon">
-              <div className="advantageIcon">
+            <div className="advantageCon" id='moneyAdvantageCon'>
+              <div className="advantageIcon" id='moneyIcon'>
                 <img src={moneySvg} alt="moneySvg" className="moneySvg" />
               </div>
               <div className="advantageText">
