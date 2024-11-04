@@ -1,0 +1,18 @@
+.servicesCard{
+    width: 370px;
+    height: 425px;
+    background-color: #C9E9FF;
+    padding: 40px;
+}
+h3{
+    font-size: 30px;
+    font-weight: 600;
+    color: #031126;
+}
+.readMore{
+    display: flex;
+    width: 127px;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+}

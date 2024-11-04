@@ -4,10 +4,11 @@ import mainScreenImg from '/main screen img.png';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+library.add(faPlay);
 import abousUsimg from '/about us screen img.png';
 import teethSvg from './assets/teeth.svg';
 import moneySvg from './assets/money.svg';
-library.add(faPlay);
+import ServisesCard from './components/servicesCard/servicesCard'
 
 function App() {
   return (
@@ -72,6 +73,16 @@ function App() {
             </div>
           </div>
 
+        </div>
+        <div className="outServicesScreen">
+          <div className="title">Our Dental Services</div>
+          <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth, free of infections, injuries and other problems with</div>
+          <div className="cardsContainer">
+          {['Teeth Checkup', 'Dental Crown', 'Teeth Implants'].map((title, index) => (
+            <ServisesCard key={index} title={title} />
+          ))}
+          </div>
+          
         </div>
       </div>
     </>
