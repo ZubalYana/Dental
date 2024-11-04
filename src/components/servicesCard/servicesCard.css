@@ -1,18 +1,38 @@
 .servicesCard{
-    width: 370px;
+    width: 340px;
     height: 425px;
-    background-color: #C9E9FF;
+    background-color: rgba(201, 233, 255, 0.2);
     padding: 40px;
 }
 h3{
     font-size: 30px;
     font-weight: 600;
     color: #031126;
+    margin-bottom: 7px;
 }
 .readMore{
     display: flex;
     width: 127px;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: 18px;
     font-weight: 500;
+    margin-top: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+.buttonText{
+    display: flex;
+    justify-content: space-between;
+}
+.readMore_underline{
+    width: 0px;
+    height: 2px;
+    background-color: #031126;
+    transition: 0.4s ease-in-out;
+}
+.readMore:hover .readMore_underline{
+    width: 100%;
+}
+.servicesCard_img{
+    margin-bottom: 15px;
 }
