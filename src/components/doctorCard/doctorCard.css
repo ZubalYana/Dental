@@ -7,6 +7,8 @@
 .doctorCard_img{
     width: 100%;
     height: 325px;
+    background-position: center;
+    object-fit: cover;
 }
 .doctorCard_text{
     width: 100%;
@@ -19,6 +21,7 @@
 .doctorInfoCon{
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 }
 .doctorName{
     font-size: 22px;
