@@ -12,6 +12,10 @@ import ServisesCard from './components/servicesCard/servicesCard'
 import teethGlassSvg from './assets/teethGlass.svg'
 import teethNailSvg from './assets/teethNail.svg'
 import teethShieldSvg from './assets/teethShield.svg'
+import DoctorCard from './components/doctorCard/doctorCard' 
+import doctor1 from '/doctor 1.png'
+import doctor2 from '/doctor 2.png'
+import doctor3 from '/doctor 3.png'
 function App() {
   return (
     <>
@@ -94,7 +98,15 @@ function App() {
           <div className="beforeTitle">Our Doctors</div>
           <div className="title">Team Of Professionals</div>
           <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
-          <div className="doctorsCardsCon"></div>
+          <div className="doctorsCardsCon">
+          {[
+            { img: doctor1, name: 'Dr.Rana Roy', position: 'Dental Crown' },
+            { img: doctor2, name: 'Dr.John Roy', position: 'Teeth Checkup' },
+            { img: doctor3, name: 'Dr.Michel Roy', position: 'Teeth Implants' },
+          ].map(({ img, name, position }, index) => (
+            <DoctorCard key={index} name={name} img={img} position={position} />
+          ))}
+          </div>
         </div>
       </div>
     </>
