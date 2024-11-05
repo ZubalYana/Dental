@@ -198,6 +198,10 @@ function App() {
           </div>
           <img src={stepsImg} alt="stepsImg" className="stepsImg" />
         </div>
+        <div className="makeAnAppointmentScreen">
+          <div className="title">Make An Appointment</div>
+          <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
+        </div>
       </div>
     </>
   );
