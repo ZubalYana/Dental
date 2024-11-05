@@ -412,4 +412,53 @@ button:hover .button-text {
 .makeAnAppointmentImg{
   width: 550px;
 }
+form{
+  width: 530px;
+}
+.inputContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+h4{
+  font-size: 22px;
+  font-weight: 600;
+  color: #031126;
+  margin: 20px 0 10px 0;
+}
+.inputContainer input, select{
+  width: 48%;
+  height: 50px;
+  border-radius: 14px;
+  border: 1px solid #CED6DB;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(3, 17, 38, 0.45);
+  background-color: #ffffff00;
+  padding-right: 30px;
+}
+.inputContainer select{
+  background-image: url(./assets/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 15px center; 
+  appearance: none;         
+  -webkit-appearance: none;  
+  -moz-appearance: none; 
+}
+.inputContainer input::placeholder{
+  color: rgba(3, 17, 38, 0.35);
+}
+.inputContainer button{
+  width: 100%;
+  height: 50px;
+  background-color: #49B3FB;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}
 /* make an appointment */

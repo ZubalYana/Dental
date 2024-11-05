@@ -203,7 +203,17 @@ function App() {
           <div className="title">Make An Appointment</div>
           <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
           <div className="makeAnAppointment_con">
-            <form action=""></form>
+            <form action="submit">
+              <h4>Appointment</h4>
+              <div className="inputContainer">
+                <input type="text" placeholder="Patient Name" />
+                <select name="gender" id="selectGender" placeholder="Gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </form>
             <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
           </div>
         </div>
