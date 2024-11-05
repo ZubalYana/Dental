@@ -206,13 +206,26 @@ function App() {
             <form action="submit">
               <h4>Appointment</h4>
               <div className="inputContainer">
-                <input type="text" placeholder="Patient Name" />
-                <select name="gender" id="selectGender" placeholder="Gender">
+                <input type="text" placeholder="Patient Name" id='name' />
+                <select name="gender" id="gender" placeholder="Gender">
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
               </div>
+              <div className="inputContainer">
+              <input type="text" placeholder="Phone number" id='phone' />
+              <input type="text" placeholder="Email" id='email' />
+              </div>
+              <div className="inputContainer">
+              <select name="department" id="department">
+                <option value="department">Department 1</option>
+                <option value="department">Department 2</option>
+                <option value="department">Department 3</option>
+              </select>
+              <input type="date" id="date" placeholder="Date" />
+              </div>
+              <textarea name="details" id="details" placeholder='More details'></textarea>
             </form>
             <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
           </div>
