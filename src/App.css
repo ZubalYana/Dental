@@ -404,4 +404,12 @@ button:hover .button-text {
   color: rgba(3, 17, 38, 0.75);
   text-align: center;
 }
+.makeAnAppointment_con{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.makeAnAppointmentImg{
+  width: 550px;
+}
 /* make an appointment */

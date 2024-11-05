@@ -18,6 +18,7 @@ import doctor1 from '/doctor 1.png';
 import doctor2 from '/doctor 2.png';
 import doctor3 from '/doctor 3.png';
 import stepsImg from '/easy steps img.png';
+import makeAnAppointmentImg from '/make an appointment img.png'
 function App() {
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
@@ -201,6 +202,10 @@ function App() {
         <div className="makeAnAppointmentScreen">
           <div className="title">Make An Appointment</div>
           <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
+          <div className="makeAnAppointment_con">
+            <form action=""></form>
+            <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
+          </div>
         </div>
       </div>
     </>
