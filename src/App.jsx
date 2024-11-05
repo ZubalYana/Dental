@@ -17,7 +17,7 @@ import DoctorCard from './components/doctorCard/doctorCard';
 import doctor1 from '/doctor 1.png';
 import doctor2 from '/doctor 2.png';
 import doctor3 from '/doctor 3.png';
-
+import stepsImg from '/easy steps img.png';
 function App() {
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
@@ -165,6 +165,38 @@ function App() {
             <div className="statisticNumber">{animateCount(20)}</div>
             <div className="statisticDescription">Years Of Experience</div>
           </div>
+        </div>
+        <div className="stepsScreen">
+          <div className="steps_textCon">
+            <div className="title">Easy Steps</div>
+            <div className="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+
+            <div className="step">
+              <div className="stepNumber">1</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Select Your Doctor</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
+
+            <div className="step">
+              <div className="stepNumber">2</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Make an Appoinment</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
+
+            <div className="step">
+              <div className="stepNumber">3</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Meet your Doctor</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
+
+          </div>
+          <img src={stepsImg} alt="stepsImg" className="stepsImg" />
         </div>
       </div>
     </>

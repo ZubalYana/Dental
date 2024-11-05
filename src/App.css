@@ -305,3 +305,57 @@ button:hover .button-text {
   font-weight: 400;
 }
 /* statistic */
+
+/* steps */
+.stepsScreen{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 200px;
+}
+
+.stepsScreen .title{
+  font-size: 56px;
+}
+.stepsScreen .subtitle{
+  color: rgba(3, 17, 38, 0.65);
+  width: 480px;
+}
+.step{
+  display: flex;
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.stepNumber{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: #49B3FB 2px dashed;
+}
+.stepTitle{
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(3, 17, 38, 0.75);
+}
+.stepDescription{
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(3, 17, 38, 0.65);
+}
+.stepTextCon{
+  width: 388px;
+  display: flex;
+  flex-direction: column;
+}
+.stepsImg{
+  width: 470px;
+  margin-left: 50px;
+}
+/* steps */
