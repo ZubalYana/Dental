@@ -226,6 +226,7 @@ function App() {
               <input type="date" id="date" placeholder="Date" />
               </div>
               <textarea name="details" id="details" placeholder='More details'></textarea>
+              <button type="submit">Send Massage</button>
             </form>
             <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
           </div>
