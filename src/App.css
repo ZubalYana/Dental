@@ -482,4 +482,24 @@ h4{
   margin-top: 20px;
   cursor: pointer;
 }
+#date {
+  border-radius: 14px; 
+  border: 1px solid #CED6DB; 
+  padding: 0 15px; 
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(3, 17, 38, 0.45);
+  background-image: url('./assets/calendar-icon.svg'); 
+  background-repeat: no-repeat;
+  background-position: right 15px center; 
+  background-size: 20px 20px; 
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: textfield; 
+}
+#date::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+
 /* make an appointment */
