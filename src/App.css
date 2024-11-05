@@ -329,6 +329,7 @@ button:hover .button-text {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+  cursor: pointer;
 }
 .stepNumber{
   width: 50px;
@@ -338,11 +339,13 @@ button:hover .button-text {
   align-items: center;
   border-radius: 50%;
   border: #49B3FB 2px dashed;
+  transition: 0.4s ease-in-out;
 }
 .stepTitle{
   font-size: 20px;
   font-weight: 600;
   color: rgba(3, 17, 38, 0.75);
+  transition: 0.4s ease-in-out;
 }
 .stepDescription{
   font-size: 17px;
@@ -357,5 +360,14 @@ button:hover .button-text {
 .stepsImg{
   width: 470px;
   margin-left: 50px;
+}
+.step:hover .stepNumber{
+  border: none;
+  background-color: #49B3FB;
+  color: #fff;
+  box-shadow: 0px 0px 10px #49B3FB;
+}
+.step:hover .stepTitle{
+  text-shadow: rgba(3, 17, 38, 0.3) 0px 0px 2px;
 }
 /* steps */
