@@ -10,7 +10,6 @@ library.add(solidStar, regularStar);
 const Review = (props) => {
     const { rate, img, name, text } = props;
 
-    // Function to render stars based on the rate
     const renderStars = () => {
         return Array.from({ length: 5 }, (_, index) => (
             <FontAwesomeIcon

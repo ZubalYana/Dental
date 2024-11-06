@@ -240,9 +240,9 @@ function App() {
           <div className="subtitle">We believe that focus and our associated programs are most instrumental in reducing readmissions and managing. </div>
           <div className="reviewsCon">
           {[
-              { img:{reviewerImg1} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:4  },
-              { img:{reviewerImg2} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
-              { img:{reviewerImg3} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
+              { img: reviewerImg1, name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:4  },
+              { img: reviewerImg2, name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
+              { img: reviewerImg3, name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
             ].map(({ img, name, text, rate }, index) => (
               <Review key={index} img={img} name={name} text={text} rate={rate} />
             ))}
