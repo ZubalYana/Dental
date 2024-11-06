@@ -424,7 +424,7 @@ form input, select, textarea{
   justify-content: space-between;
   margin-bottom: 15px;
 }
-h4{
+.makeAnAppointmentScreen h4{
   font-size: 22px;
   font-weight: 600;
   color: #031126;

@@ -19,6 +19,10 @@ import doctor2 from '/doctor 2.png';
 import doctor3 from '/doctor 3.png';
 import stepsImg from '/easy steps img.png';
 import makeAnAppointmentImg from '/make an appointment img.png'
+import Review from './components/Review/Review';
+import reviewerImg1 from '/review img 1.png';
+import reviewerImg2 from '/review img 2.png';
+import reviewerImg3 from '/review img 3.png';
 function App() {
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
@@ -234,7 +238,15 @@ function App() {
         <div className="reviewsScreen">
           <div className="title">Reviews From Our Patient.</div>
           <div className="subtitle">We believe that focus and our associated programs are most instrumental in reducing readmissions and managing. </div>
-          <div className="reviewsCon"></div>
+          <div className="reviewsCon">
+          {[
+              { img:{reviewerImg1} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:4  },
+              { img:{reviewerImg2} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
+              { img:{reviewerImg3} , name: "Andrew Smith ", text: "Lorem ipsum dolor sit amet, consec adipis. Cursus ultricies sit sit ultricies sit sit dolo", rate:5  },
+            ].map(({ img, name, text, rate }, index) => (
+              <Review key={index} img={img} name={name} text={text} rate={rate} />
+            ))}
+          </div>
         </div>
       </div>
     </>
