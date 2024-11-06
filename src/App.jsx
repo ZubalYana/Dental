@@ -258,6 +258,7 @@ function App() {
             </div>
           </div>
         </div>
+        <div className="copyright">Copyright © 2020 All rights Reserved - Dental</div>
       </div>
     </>
   );

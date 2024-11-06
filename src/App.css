@@ -600,3 +600,16 @@ form button:hover{
   border: #0098FF 1px solid;
 }
 /* newsLetter */
+
+/* copyright */
+.copyright{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 200px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(3, 17, 38, 0.6);
+  margin: 20px 0;
+}
+/* copyright */
