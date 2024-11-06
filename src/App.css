@@ -471,22 +471,21 @@ h4{
   color: rgba(3, 17, 38, 0.35);
 }
 #date {
-  border-radius: 14px; 
-  border: 1px solid #CED6DB; 
-  padding: 0 15px; 
+  border-radius: 14px;
+  border: 1px solid #CED6DB;
+  padding: 0 15px;
   font-size: 16px;
   font-weight: 300;
   color: rgba(3, 17, 38, 0.45);
-  background-image: url('./assets/calendar-icon.svg'); 
+  /* background-image: url('./assets/calendar-icon.svg');
   background-repeat: no-repeat;
-  background-position: right 15px center; 
-  background-size: 20px 20px; 
-  appearance: none; 
-  -webkit-appearance: none;
-  -moz-appearance: textfield; 
+  background-position: right 15px center;
+  background-size: 20px 20px;
+  display: inline-block; */
 }
+
 #date::-webkit-calendar-picker-indicator {
-  display: none;
+  color: rgba(3, 17, 38, 0.45);
 }
 form button{
   width: 200px;
