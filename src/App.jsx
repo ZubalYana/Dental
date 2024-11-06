@@ -248,6 +248,16 @@ function App() {
             ))}
           </div>
         </div>
+        <div className="newsLetter">
+          <div className="newsLetterBox">
+            <div className="newsLetter_title">Our Newsletter</div>
+            <div className="newsLetter_subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
+            <div className="inputCon">
+              <input type="text" placeholder="Enter your email" id='emailInput' />
+              <div className='subscribeBtn'>Subscribe</div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
