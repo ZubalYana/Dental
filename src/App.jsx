@@ -231,6 +231,11 @@ function App() {
             <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
           </div>
         </div>
+        <div className="reviewsScreen">
+          <div className="title">Reviews From Our Patient.</div>
+          <div className="subtitle">We believe that focus and our associated programs are most instrumental in reducing readmissions and managing. </div>
+          <div className="reviewsCon"></div>
+        </div>
       </div>
     </>
   );
