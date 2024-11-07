@@ -104,4 +104,34 @@
         font-size: 16px !important;
     }
     /* statistic screen */
+
+    /* steps screen */
+    .stepsScreen{
+        padding: 0 100px !important;
+        height: 75vh !important;
+    }
+    .stepsImg{
+        width: 320px;
+    }
+    .stepsScreen .title{
+        font-size: 36px !important;
+    }
+    .stepsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .stepTitle{
+        font-size: 18px;
+    }
+    .stepDescription{
+        font-size: 12px;
+    }
+    .stepNumber{
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .step{
+        width: 440px;
+    }
+    /* steps screen */
 }
