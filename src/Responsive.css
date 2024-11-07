@@ -134,4 +134,27 @@
         width: 440px;
     }
     /* steps screen */
+
+    /* make an appointment screen */
+    .makeAnAppointmentScreen{
+        padding: 40px 100px !important;
+        height: 90vh !important;
+    }
+    .makeAnAppointmentScreen .title{
+        font-size: 36px !important;
+    }
+    .makeAnAppointmentScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .makeAnAppointmentImg{
+        width: 320px;
+        height: min-content;
+    }
+    .makeAnAppointment_con{
+        align-items: center;
+    }
+    form{
+        width: 500px;
+    }
+    /* make an appointment screen */
 }
