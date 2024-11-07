@@ -187,12 +187,16 @@
     /* reviews */
     .reviewsScreen{
         padding: 40px 100px !important;
+        height: 55vh !important;
     }
     .reviewsScreen .title{
         font-size: 36px !important;
     }
     .reviewsScreen .subtitle{
         font-size: 14px !important;
+    }
+    .review{
+        width: 260px !important;
     }
     /* reviews */
 }
