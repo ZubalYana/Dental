@@ -39,6 +39,7 @@
     /* about us screen */
     .aboutUsScreen{
         padding: 0 100px !important;
+        height: 75vh !important;
     }
     .abousUsimg{
         width: 320px;
@@ -69,6 +70,8 @@
     /* services screen */
     .outServicesScreen{
         padding: 0 100px !important;
+        height: 75vh !important;
+
     }
     .outServicesScreen .title{
         font-size: 36px !important;
