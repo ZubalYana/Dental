@@ -36,17 +36,3 @@ h3{
 .servicesCard_img{
     margin-bottom: 15px;
 }
-
-@media screen and (max-width: 1025px) {
-    .servicesCard{
-        width: 260px;
-        height: 350px;
-        padding: 20px;
-    }
-    .servicesCard_text h3{
-        font-size: 24px !important;
-    }
-    .servicesCard_text p{
-        font-size: 14px !important;
-    }
-}

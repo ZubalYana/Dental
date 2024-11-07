@@ -78,6 +78,17 @@
     .outServicesScreen .subtitle{
         font-size: 14px !important;
     }
+    .servicesCard{
+        width: 260px;
+        height: 350px;
+        padding: 20px;
+    }
+    .servicesCard_text h3{
+        font-size: 24px !important;
+    }
+    .servicesCard_text p{
+        font-size: 14px !important;
+    }
     /* services screen */
 
     /* doctors screen */
@@ -90,6 +101,21 @@
     }
     .ourDoctorsScreen .subtitle{
         font-size: 14px !important;
+    }
+    .doctorCard{
+        width: 260px !important;
+    }
+    .doctorInfoCon{
+        width: 160px !important;
+    }
+    .doctorName{
+        font-size: 20px !important;
+    }
+    .possition{
+        font-size: 14px !important;
+    }
+    .doctorCard_text{
+        padding: 0 20px !important;
     }
     /* doctors screen */
 
@@ -157,4 +183,16 @@
         width: 500px;
     }
     /* make an appointment screen */
+
+    /* reviews */
+    .reviewsScreen{
+        padding: 40px 100px !important;
+    }
+    .reviewsScreen .title{
+        font-size: 36px !important;
+    }
+    .reviewsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    /* reviews */
 }
