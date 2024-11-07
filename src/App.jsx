@@ -1,4 +1,5 @@
 import './App.css';
+import './Responsive.css'
 import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import mainScreenImg from '/main screen img.png';

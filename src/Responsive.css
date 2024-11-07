@@ -1,0 +1,33 @@
+@media (max-width: 1025px) {
+    header{
+        padding: 0 100px !important;
+    }
+    .nav{
+        width: 300px !important;
+    }
+    .header_btn{
+        width: 110px !important;
+        height: 50px !important;
+    }
+    .header_buttons{
+        width: 240px !important;
+    }
+    .mainScreenDecoration{
+        width: 90px !important;
+    }
+    .mainScreenImg{
+        width: 430px;
+    }
+    .mainScreen{
+        padding: 0 100px !important;
+    }
+    .title{
+        font-size: 46px !important;
+    }
+    .mainScreen .title, .subtitle{
+        width: 480px;
+    }
+    .subtitle{
+        font-size: 16px !important;
+    }
+}
