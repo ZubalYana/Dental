@@ -200,3 +200,225 @@
     }
     /* reviews */
 }
+@media (max-width: 768px) {
+    /* header */
+    header{
+        padding: 0 70px 0 30px !important;
+    }
+    .logo{
+        font-size: 22px !important;
+        width: 125px !important;
+    }
+    .nav{
+        width: 250px !important;
+        font-size: 14px !important;
+    }
+    .header_btn{
+        width: 90px !important;
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+    .header_buttons{
+        width: 200px !important;
+    }
+    /* header */
+
+    /* main screen */
+    .mainScreenDecoration{
+        width: 60px !important;
+    }
+    .mainScreenImg{
+        width: 430px;
+    }
+    .mainScreen{
+        padding: 0 100px !important;
+    }
+    .title{
+        font-size: 46px !important;
+    }
+    .mainScreen .title, .subtitle{
+        width: 480px;
+    }
+    .subtitle{
+        font-size: 16px !important;
+    }
+    /* main screen */
+
+    /* about us screen */
+    .aboutUsScreen{
+        padding: 0 100px !important;
+        height: 75vh !important;
+        display: none;
+
+    }
+    .abousUsimg{
+        width: 320px;
+    }
+    .beforeTitle{
+        font-size: 12px;
+    }
+    .aboutUsScreen .title{
+        font-size: 36px !important;
+        width: 350px;
+    }
+    .aboutUsScreen .subtitle{
+        font-size: 14px !important;
+        width: 350px;
+    }
+    .advantageIcon{
+        width: 60px;
+        height: 60px;
+    }
+    .advantageTitle{
+        font-size: 20px !important;
+    }
+    .advantageSubtitle{
+        font-size: 12px !important;
+    }
+    /* about us screen */
+
+    /* services screen */
+    .outServicesScreen{
+        padding: 0 100px !important;
+        height: 75vh !important;
+        display: none;
+
+    }
+    .outServicesScreen .title{
+        font-size: 36px !important;
+    }
+    .outServicesScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .servicesCard{
+        width: 260px;
+        height: 350px;
+        padding: 20px;
+    }
+    .servicesCard_text h3{
+        font-size: 24px !important;
+    }
+    .servicesCard_text p{
+        font-size: 14px !important;
+    }
+    /* services screen */
+
+    /* doctors screen */
+    .ourDoctorsScreen{
+        padding: 0 100px !important;
+        height: 80vh !important;
+        display: none;
+
+    }
+    .ourDoctorsScreen .title{
+        font-size: 36px !important;
+    }
+    .ourDoctorsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .doctorCard{
+        width: 260px !important;
+    }
+    .doctorInfoCon{
+        width: 160px !important;
+    }
+    .doctorName{
+        font-size: 20px !important;
+    }
+    .possition{
+        font-size: 14px !important;
+    }
+    .doctorCard_text{
+        padding: 0 20px !important;
+    }
+    /* doctors screen */
+
+    /* statistic screen */
+    .statisticScreen{
+        padding: 0 100px !important;
+        display: none;
+
+    }
+    .statisticScreen .statisticNumber{
+        font-size: 42px !important;
+    }
+    .statisticScreen .statisticDescription{
+        font-size: 16px !important;
+    }
+    /* statistic screen */
+
+    /* steps screen */
+    .stepsScreen{
+        padding: 0 100px !important;
+        height: 75vh !important;
+        display: none;
+
+    }
+    .stepsImg{
+        width: 320px;
+    }
+    .stepsScreen .title{
+        font-size: 36px !important;
+    }
+    .stepsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .stepTitle{
+        font-size: 18px;
+    }
+    .stepDescription{
+        font-size: 12px;
+    }
+    .stepNumber{
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .step{
+        width: 440px;
+    }
+    /* steps screen */
+
+    /* make an appointment screen */
+    .makeAnAppointmentScreen{
+        padding: 40px 100px !important;
+        height: 90vh !important;
+        display: none;
+
+    }
+    .makeAnAppointmentScreen .title{
+        font-size: 36px !important;
+    }
+    .makeAnAppointmentScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .makeAnAppointmentImg{
+        width: 320px;
+        height: min-content;
+    }
+    .makeAnAppointment_con{
+        align-items: center;
+    }
+    form{
+        width: 500px;
+    }
+    /* make an appointment screen */
+
+    /* reviews */
+    .reviewsScreen{
+        padding: 40px 100px !important;
+        height: 55vh !important;
+        display: none;
+
+    }
+    .reviewsScreen .title{
+        font-size: 36px !important;
+    }
+    .reviewsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    .review{
+        width: 260px !important;
+    }
+    /* reviews */
+}
