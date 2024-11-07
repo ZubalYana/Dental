@@ -83,7 +83,7 @@
     /* doctors screen */
     .ourDoctorsScreen{
         padding: 0 100px !important;
-        height: 75vh !important;
+        height: 80vh !important;
     }
     .ourDoctorsScreen .title{
         font-size: 36px !important;
@@ -92,4 +92,16 @@
         font-size: 14px !important;
     }
     /* doctors screen */
+
+    /* statistic screen */
+    .statisticScreen{
+        padding: 0 100px !important;
+    }
+    .statisticScreen .statisticNumber{
+        font-size: 42px !important;
+    }
+    .statisticScreen .statisticDescription{
+        font-size: 16px !important;
+    }
+    /* statistic screen */
 }
