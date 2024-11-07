@@ -33,3 +33,21 @@
     font-weight: 400;
     color: rgba(3, 17, 38, 0.65);
 }
+
+@media screen and (max-width: 1025px) {
+    .doctorCard{
+        width: 260px !important;
+    }
+    .doctorInfoCon{
+        width: 160px !important;
+    }
+    .doctorName{
+        font-size: 20px !important;
+    }
+    .possition{
+        font-size: 14px !important;
+    }
+    .doctorCard_text{
+        padding: 0 20px !important;
+    }
+}

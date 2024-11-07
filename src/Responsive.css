@@ -71,7 +71,6 @@
     .outServicesScreen{
         padding: 0 100px !important;
         height: 75vh !important;
-
     }
     .outServicesScreen .title{
         font-size: 36px !important;
@@ -80,4 +79,17 @@
         font-size: 14px !important;
     }
     /* services screen */
+
+    /* doctors screen */
+    .ourDoctorsScreen{
+        padding: 0 100px !important;
+        height: 75vh !important;
+    }
+    .ourDoctorsScreen .title{
+        font-size: 36px !important;
+    }
+    .ourDoctorsScreen .subtitle{
+        font-size: 14px !important;
+    }
+    /* doctors screen */
 }
