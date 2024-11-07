@@ -1,4 +1,5 @@
 @media (max-width: 1025px) {
+    /* header */
     header{
         padding: 0 100px !important;
     }
@@ -12,6 +13,9 @@
     .header_buttons{
         width: 240px !important;
     }
+    /* header */
+
+    /* main screen */
     .mainScreenDecoration{
         width: 90px !important;
     }
@@ -30,4 +34,47 @@
     .subtitle{
         font-size: 16px !important;
     }
+    /* main screen */
+
+    /* about us screen */
+    .aboutUsScreen{
+        padding: 0 100px !important;
+    }
+    .abousUsimg{
+        width: 320px;
+    }
+    .beforeTitle{
+        font-size: 12px;
+    }
+    .aboutUsScreen .title{
+        font-size: 36px !important;
+        width: 350px;
+    }
+    .aboutUsScreen .subtitle{
+        font-size: 14px !important;
+        width: 350px;
+    }
+    .advantageIcon{
+        width: 60px;
+        height: 60px;
+    }
+    .advantageTitle{
+        font-size: 20px !important;
+    }
+    .advantageSubtitle{
+        font-size: 12px !important;
+    }
+    /* about us screen */
+
+    /* services screen */
+    .outServicesScreen{
+        padding: 0 100px !important;
+    }
+    .outServicesScreen .title{
+        font-size: 36px !important;
+    }
+    .outServicesScreen .subtitle{
+        font-size: 14px !important;
+    }
+    /* services screen */
 }
