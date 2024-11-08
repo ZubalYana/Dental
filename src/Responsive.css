@@ -592,21 +592,24 @@
     /* doctors screen */
     .ourDoctorsScreen{
         padding: 0 30px !important;
-        height: 100vh !important;
-        display: none;
+        height: 240vh !important;
     }
     .ourDoctorsScreen .title{
-        font-size: 36px !important;
+        font-size: 28px !important;
     }
     .ourDoctorsScreen .subtitle{
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .doctorsCardsCon{
         margin-top: 30px !important;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
     .doctorCard{
-        width: 230px !important;
+        width: 80% !important;
         height: 380px !important;
+        margin-bottom: 40px;
     }
     .doctorCard_img{
         height: 280px !important;
