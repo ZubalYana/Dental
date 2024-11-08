@@ -389,19 +389,18 @@
 
     /* make an appointment screen */
     .makeAnAppointmentScreen{
-        padding: 40px 100px !important;
-        height: 90vh !important;
-        display: none;
-
+        padding: 40px 30px !important;
+        height: 120vh !important;
     }
     .makeAnAppointmentScreen .title{
-        font-size: 36px !important;
+        font-size: 32px !important;
     }
     .makeAnAppointmentScreen .subtitle{
-        font-size: 14px !important;
+        font-size: 12px !important;
+        width: 80%;
     }
     .makeAnAppointmentImg{
-        width: 320px;
+        width: 300px;
         height: min-content;
     }
     .makeAnAppointment_con{
