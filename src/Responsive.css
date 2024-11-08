@@ -886,10 +886,9 @@
     .outServicesScreen{
         padding: 0 30px !important;
         min-height: 200vh !important;
-        display: none;
     }
     .outServicesScreen .title{
-        font-size: 32px !important;
+        font-size: 28px !important;
     }
     .outServicesScreen .subtitle{
         font-size: 12px !important;
@@ -917,10 +916,10 @@
     .ourDoctorsScreen{
         padding: 0 30px !important;
         height: 240vh !important;
-        display: none;
     }
     .ourDoctorsScreen .title{
         font-size: 28px !important;
+        text-align: center;
     }
     .ourDoctorsScreen .subtitle{
         font-size: 12px !important;
@@ -956,9 +955,8 @@
     /* statistic screen */
     .statisticScreen{
         padding: 20px 50px !important;
-        height: 500px !important;
-        flex-wrap: wrap;
-        display: none;
+        height: 550px !important;
+        flex-direction: column;
     }
     .statisticScreen .statisticNumber{
         font-size: 42px !important;
@@ -971,15 +969,12 @@
     /* steps screen */
     .stepsScreen{
         padding: 0 20px !important;
-        height: 120vh !important;
+        height: 140vh !important;
         flex-direction: column;
         align-items: flex-start;
-        display: none;
     }
     .stepsImg{
-        width: 300px;
-        margin-left: 0px !important;
-        margin-top: 30px;
+        width: 100%;
     }
     .steps_textCon{
         width: 100% !important;
@@ -1009,26 +1004,44 @@
     /* make an appointment screen */
     .makeAnAppointmentScreen{
         padding: 40px 30px !important;
-        height: 150vh !important;
-        display: none;
+        height: 205vh !important;
+    }
+    .makeAnAppointmentScreen h4{
+        font-size: 18px !important;
     }
     .makeAnAppointmentScreen .title{
-        font-size: 32px !important;
+        font-size: 28px !important;
+        text-align: center;
     }
     .makeAnAppointmentScreen .subtitle{
         font-size: 12px !important;
         width: 80%;
     }
     .makeAnAppointmentImg{
-        width: 300px;
+        width: 100%;
         height: min-content;
+        margin-top: 20px;
     }
     .makeAnAppointment_con{
         align-items: center;
         flex-direction: column;
     }
+    .inputContainer{
+        flex-direction: column;
+        margin: 0;
+    }
+    .inputContainer input, textarea, select{
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
     form{
         width: 100% !important;
+    }
+    form button{
+        width: 150px;
+        height: 50px;
+        font-size: 14px;
+        margin-top: 0px;
     }
     /* make an appointment screen */
 
