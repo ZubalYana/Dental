@@ -682,8 +682,7 @@
     /* make an appointment screen */
     .makeAnAppointmentScreen{
         padding: 40px 30px !important;
-        height: 120vh !important;
-        display: none;
+        height: 150vh !important;
     }
     .makeAnAppointmentScreen .title{
         font-size: 32px !important;
@@ -698,9 +697,10 @@
     }
     .makeAnAppointment_con{
         align-items: center;
+        flex-direction: column;
     }
     form{
-        width: 500px;
+        width: 100% !important;
     }
     /* make an appointment screen */
 
