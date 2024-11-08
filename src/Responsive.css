@@ -491,6 +491,7 @@
     }
     .mainScreen{
         padding: 0 30px !important;
+        height: 110vh !important;
         display: flex;
         flex-direction: column;
     }
@@ -519,18 +520,21 @@
 
     /* about us screen */
     .aboutUsScreen{
-        padding: 0 100px !important;
-        height: 75vh !important;
-        display: none;
+        padding: 0 20px !important;
+        height: 120vh !important;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
     }
     .abousUsimg{
-        width: 320px;
+        width: 330px;
+        margin-top: 40px;
     }
     .beforeTitle{
         font-size: 12px;
     }
     .aboutUsScreen .title{
-        font-size: 32px !important;
+        font-size: 28px !important;
         width: 350px;
     }
     .aboutUsScreen .subtitle{
@@ -549,6 +553,9 @@
     }
     .advantageSubtitle{
         font-size: 12px !important;
+    }
+    .aboutUs_text{
+        margin: 0;
     }
     /* about us screen */
 
