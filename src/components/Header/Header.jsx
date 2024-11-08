@@ -14,6 +14,11 @@ export default function Header() {
                 <li className="nav_item">Blog <div className="animatedLine"></div></li>
                 <li className="nav_item">Contact Us <div className="animatedLine"></div></li>
             </ul>
+            <div className="burger" id="burger">
+                <div className="burger_line"></div>
+                <div className="burger_line"></div>
+                <div className="burger_line"></div>
+            </div>
             <div className="header_buttons">
                 <button className="header_btn" id="loginBtn">Login</button>
                 <button className="header_btn" id="signUpBtn">Sign Up</button>
