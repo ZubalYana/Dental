@@ -432,4 +432,10 @@
         font-size: 10px !important;
     }
     /* reviews */
+
+    /* newsLetter */
+    .newsLetter{
+        padding: 0 30px !important;
+    }
+    /* newsLetter */
 }
