@@ -343,9 +343,8 @@
 
     /* statistic screen */
     .statisticScreen{
-        padding: 0 100px !important;
-        display: none;
-
+        padding: 0 30px !important;
+        height: 200px !important;
     }
     .statisticScreen .statisticNumber{
         font-size: 42px !important;
