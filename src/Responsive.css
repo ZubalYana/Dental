@@ -762,3 +762,336 @@
     }
     /* copyright */
 }
+@media (max-width: 376px) {
+    /* header */
+    header{
+        padding: 0 50px 0 20px !important;
+        margin-top: 10px !important;
+    }
+    .logo{
+        font-size: 22px !important;
+        width: 125px !important;
+    }
+    .nav{
+        width: 250px !important;
+        font-size: 14px !important;
+        display: none !important;
+    }
+    .header_btn{
+        width: 90px !important;
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+    .header_buttons{
+        width: 200px !important;
+        display: none !important;
+    }
+    #burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .burger_line{
+        width: 30px;
+        height: 3px;
+        background-color: #031126;
+        margin: 2px 0;
+        border-radius: 10px;
+    }
+    /* header */
+
+    /* main screen */
+    .mainScreenDecoration{
+        width: 40px !important;
+        height: 130vh !important;
+    }
+    .mainScreenImg{
+        width: 330px;
+        top: 320px;
+    }
+    .mainScreen{
+        padding: 0 30px !important;
+        height: 110vh !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        font-size: 24px !important;
+    }
+    .mainScreen .title, .subtitle{
+        width: 95% !important;
+    }
+    .subtitle{
+        font-size: 12px !important;
+        margin-top: 10px !important;
+    }
+    .mainScreen_btn{
+        margin-bottom: 20px !important;
+    }
+    .button_video_con{
+        width: 100%;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mainScreen_text{
+        margin-top: 15px;
+    }
+    /* main screen */
+
+    /* about us screen */
+    .aboutUsScreen{
+        padding: 0 20px !important;
+        height: 140vh !important;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        display: none;
+    }
+    .abousUsimg{
+        width: 330px;
+        margin-top: 40px;
+    }
+    .beforeTitle{
+        font-size: 12px;
+    }
+    .aboutUsScreen .title{
+        font-size: 28px !important;
+        width: 350px;
+    }
+    .aboutUsScreen .subtitle{
+        font-size: 12px !important;
+        width: 350px;
+    }
+    .advantageCon{
+        margin-top: 20px !important;
+    }
+    .advantageIcon{
+        width: 60px;
+        height: 60px;
+    }
+    .advantageTitle{
+        font-size: 20px !important;
+    }
+    .advantageSubtitle{
+        font-size: 12px !important;
+    }
+    .aboutUs_text{
+        margin: 0;
+    }
+    /* about us screen */
+
+    /* services screen */
+    .outServicesScreen{
+        padding: 0 30px !important;
+        min-height: 200vh !important;
+        display: none;
+    }
+    .outServicesScreen .title{
+        font-size: 32px !important;
+    }
+    .outServicesScreen .subtitle{
+        font-size: 12px !important;
+    }
+    .cardsContainer{
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .servicesCard{
+        width: 100% !important;
+        height: 320px !important;
+        padding: 20px !important;
+        margin-top: 20px;
+    }
+    .servicesCard_text h3{
+        font-size: 24px !important;
+    }
+    .servicesCard_text p{
+        font-size: 14px !important;
+    }
+    /* services screen */
+
+    /* doctors screen */
+    .ourDoctorsScreen{
+        padding: 0 30px !important;
+        height: 240vh !important;
+        display: none;
+    }
+    .ourDoctorsScreen .title{
+        font-size: 28px !important;
+    }
+    .ourDoctorsScreen .subtitle{
+        font-size: 12px !important;
+    }
+    .doctorsCardsCon{
+        margin-top: 30px !important;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .doctorCard{
+        width: 80% !important;
+        height: 380px !important;
+        margin-bottom: 40px;
+    }
+    .doctorCard_img{
+        height: 280px !important;
+    }
+    .doctorInfoCon{
+        width: 130px !important;
+    }
+    .doctorName{
+        font-size: 18px !important;
+    }
+    .possition{
+        font-size: 12px !important;
+    }
+    .doctorCard_text{
+        padding: 0 20px !important;
+    }
+    /* doctors screen */
+
+    /* statistic screen */
+    .statisticScreen{
+        padding: 20px 50px !important;
+        height: 500px !important;
+        flex-wrap: wrap;
+        display: none;
+    }
+    .statisticScreen .statisticNumber{
+        font-size: 42px !important;
+    }
+    .statisticScreen .statisticDescription{
+        font-size: 16px !important;
+    }
+    /* statistic screen */
+
+    /* steps screen */
+    .stepsScreen{
+        padding: 0 20px !important;
+        height: 120vh !important;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+    .stepsImg{
+        width: 300px;
+        margin-left: 0px !important;
+        margin-top: 30px;
+    }
+    .steps_textCon{
+        width: 100% !important;
+    }
+    .stepsScreen .title{
+        font-size: 28px !important;
+        width: 200px !important;
+    }
+    .stepsScreen .subtitle{
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+    .stepTitle{
+        font-size: 16px;
+    }
+    .stepDescription{
+        font-size: 10px;
+        width: 300px;
+    }
+    .stepNumber{
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    /* steps screen */
+
+    /* make an appointment screen */
+    .makeAnAppointmentScreen{
+        padding: 40px 30px !important;
+        height: 150vh !important;
+        display: none;
+    }
+    .makeAnAppointmentScreen .title{
+        font-size: 32px !important;
+    }
+    .makeAnAppointmentScreen .subtitle{
+        font-size: 12px !important;
+        width: 80%;
+    }
+    .makeAnAppointmentImg{
+        width: 300px;
+        height: min-content;
+    }
+    .makeAnAppointment_con{
+        align-items: center;
+        flex-direction: column;
+    }
+    form{
+        width: 100% !important;
+    }
+    /* make an appointment screen */
+
+    /* reviews */
+    .reviewsScreen{
+        padding: 40px 30px !important;
+        height: 160vh !important;
+        display: none;
+    }
+    .reviewsScreen .title{
+        font-size: 28px !important;
+        text-align: center;
+    }
+    .reviewsCon{
+        flex-direction: column;
+        align-items: center;
+    }
+    .reviewsScreen .subtitle{
+        font-size: 12px !important;
+    }
+    .review{
+        width: 80% !important;
+        margin-bottom: 50px;
+    }
+    .reviewerName{
+        font-size: 16px !important;
+    }
+    .reviewerText{
+        font-size: 10px !important;
+    }
+    /* reviews */
+
+    /* newsLetter */
+    .newsLetter{
+        padding: 0 30px !important;
+        display: none;
+    }
+    .newsLetter_title{
+        font-size: 28px !important;
+    }
+    .newsLetter_subtitle{
+        width: 100%;
+        font-size: 12px !important;
+    }
+    .newsLetterBox{
+        padding: 20px;
+        height: 250px;
+    }
+    .inputCon{
+        width: 100% !important;
+    }
+    .subscribeBtn{
+        width: 120px !important;
+    }
+    /* newsLetter */
+
+    /* copyright */
+    .copyright{
+        padding: 0;
+        width: 100% !important;
+        display: none;
+    }
+    /* copyright */
+}
