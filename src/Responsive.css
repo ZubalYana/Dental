@@ -707,17 +707,22 @@
     /* reviews */
     .reviewsScreen{
         padding: 40px 30px !important;
-        height: 70vh !important;
-        display: none;
+        height: 160vh !important;
     }
     .reviewsScreen .title{
-        font-size: 32px !important;
+        font-size: 28px !important;
+        text-align: center;
+    }
+    .reviewsCon{
+        flex-direction: column;
+        align-items: center;
     }
     .reviewsScreen .subtitle{
         font-size: 12px !important;
     }
     .review{
-        width: 220px !important;
+        width: 80% !important;
+        margin-bottom: 50px;
     }
     .reviewerName{
         font-size: 16px !important;
@@ -730,7 +735,30 @@
     /* newsLetter */
     .newsLetter{
         padding: 0 30px !important;
-        display: none !important;
+    }
+    .newsLetter_title{
+        font-size: 28px !important;
+    }
+    .newsLetter_subtitle{
+        width: 100%;
+        font-size: 12px !important;
+    }
+    .newsLetterBox{
+        padding: 20px;
+        height: 250px;
+    }
+    .inputCon{
+        width: 100% !important;
+    }
+    .subscribeBtn{
+        width: 120px !important;
     }
     /* newsLetter */
+
+    /* copyright */
+    .copyright{
+        padding: 0;
+        width: 100% !important;
+    }
+    /* copyright */
 }
