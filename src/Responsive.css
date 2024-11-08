@@ -281,7 +281,7 @@
     /* services screen */
     .outServicesScreen{
         padding: 0 30px !important;
-        height: 75vh !important;
+        height: 82vh !important;
     }
     .outServicesScreen .title{
         font-size: 32px !important;
@@ -307,9 +307,8 @@
 
     /* doctors screen */
     .ourDoctorsScreen{
-        padding: 0 100px !important;
-        height: 80vh !important;
-        display: none;
+        padding: 0 30px !important;
+        height: 100vh !important;
 
     }
     .ourDoctorsScreen .title{
@@ -318,17 +317,24 @@
     .ourDoctorsScreen .subtitle{
         font-size: 14px !important;
     }
+    .doctorsCardsCon{
+        margin-top: 30px !important;
+    }
     .doctorCard{
-        width: 260px !important;
+        width: 230px !important;
+        height: 380px !important;
+    }
+    .doctorCard_img{
+        height: 280px !important;
     }
     .doctorInfoCon{
-        width: 160px !important;
+        width: 130px !important;
     }
     .doctorName{
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
     .possition{
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .doctorCard_text{
         padding: 0 20px !important;
