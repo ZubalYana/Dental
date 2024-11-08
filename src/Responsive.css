@@ -356,25 +356,26 @@
 
     /* steps screen */
     .stepsScreen{
-        padding: 0 100px !important;
+        padding: 0 30px !important;
         height: 75vh !important;
-        display: none;
-
     }
     .stepsImg{
-        width: 320px;
+        width: 280px;
+        margin-left: 0px !important;
     }
     .stepsScreen .title{
-        font-size: 36px !important;
+        font-size: 32px !important;
     }
     .stepsScreen .subtitle{
-        font-size: 14px !important;
+        font-size: 12px !important;
+        width: 400px;
     }
     .stepTitle{
-        font-size: 18px;
+        font-size: 16px;
     }
     .stepDescription{
-        font-size: 12px;
+        font-size: 10px;
+        width: 300px;
     }
     .stepNumber{
         width: 40px;
