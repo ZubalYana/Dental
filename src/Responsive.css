@@ -413,19 +413,23 @@
 
     /* reviews */
     .reviewsScreen{
-        padding: 40px 100px !important;
-        height: 55vh !important;
-        display: none;
-
+        padding: 40px 30px !important;
+        height: 70vh !important;
     }
     .reviewsScreen .title{
-        font-size: 36px !important;
+        font-size: 32px !important;
     }
     .reviewsScreen .subtitle{
-        font-size: 14px !important;
+        font-size: 12px !important;
     }
     .review{
-        width: 260px !important;
+        width: 220px !important;
+    }
+    .reviewerName{
+        font-size: 16px !important;
+    }
+    .reviewerText{
+        font-size: 10px !important;
     }
     /* reviews */
 }
