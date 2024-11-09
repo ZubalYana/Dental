@@ -1243,10 +1243,11 @@
     /* services screen */
     .outServicesScreen{
         padding: 0 30px !important;
-        min-height: 200vh !important;
+        min-height: 217vh !important;
     }
     .outServicesScreen .title{
         font-size: 28px !important;
+        text-align: center;
     }
     .outServicesScreen .subtitle{
         font-size: 12px !important;
@@ -1273,7 +1274,7 @@
     /* doctors screen */
     .ourDoctorsScreen{
         padding: 0 30px !important;
-        height: 240vh !important;
+        height: 250vh !important;
     }
     .ourDoctorsScreen .title{
         font-size: 28px !important;
