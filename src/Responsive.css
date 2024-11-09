@@ -1159,7 +1159,7 @@
         height: 130vh !important;
     }
     .mainScreenImg{
-        width: 330px;
+        width: 280px;
         top: 320px;
     }
     .mainScreen{
@@ -1206,9 +1206,12 @@
     .beforeTitle{
         font-size: 12px;
     }
+    .aboutUs_text{
+        width: 100% !important;
+    }
     .aboutUsScreen .title{
         font-size: 28px !important;
-        width: 350px;
+        width: 100% !important;
     }
     .aboutUsScreen .subtitle{
         font-size: 12px !important;
@@ -1221,11 +1224,16 @@
         width: 60px;
         height: 60px;
     }
+    .advantageText{
+        width: fit-content !important;
+    }
     .advantageTitle{
-        font-size: 20px !important;
+        font-size: 16px !important;
+        width: fit-content !important;
     }
     .advantageSubtitle{
-        font-size: 12px !important;
+        font-size: 10px !important;
+        width: 180px !important;
     }
     .aboutUs_text{
         margin: 0;
