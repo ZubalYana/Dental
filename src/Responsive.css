@@ -1437,15 +1437,15 @@
         padding: 0 30px !important;
     }
     .newsLetter_title{
-        font-size: 28px !important;
+        font-size: 20px !important;
     }
     .newsLetter_subtitle{
         width: 100%;
-        font-size: 12px !important;
+        font-size: 10px !important;
     }
     .newsLetterBox{
         padding: 10px;
-        height: 220px;
+        height: 190px;
     }
     .inputCon{
         width: 100% !important;
