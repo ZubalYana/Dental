@@ -981,18 +981,24 @@
     }
     .stepsScreen .title{
         font-size: 28px !important;
-        width: 200px !important;
     }
     .stepsScreen .subtitle{
         font-size: 12px !important;
         width: 90% !important;
     }
+    .step{
+        width: 90% !important;
+    }
     .stepTitle{
         font-size: 16px;
+        width: fit-content !important;
+    }
+    .stepTextCon{
+        width: fit-content !important;
     }
     .stepDescription{
         font-size: 10px;
-        width: 300px;
+        width: 250px !important;
     }
     .stepNumber{
         width: 40px;
@@ -1078,7 +1084,7 @@
         padding: 0 30px !important;
     }
     .newsLetter_title{
-        font-size: 28px !important;
+        font-size: 24px !important;
     }
     .newsLetter_subtitle{
         width: 100%;
