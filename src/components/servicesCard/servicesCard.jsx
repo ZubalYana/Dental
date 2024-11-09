@@ -4,7 +4,7 @@ import arrowRightSvg from "../../assets/arrowRight.svg";
 
 const ServicesCard = (props) => {
     return (
-        <div className="servicesCard">
+        <div className="servicesCard" data-aos="flip-right" data-aos-duration="1200">
             <div className="servicesCard_img">
                 <img src={props.img} alt="teethImg" className="servicesCard_img" />
             </div>

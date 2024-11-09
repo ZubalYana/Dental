@@ -78,7 +78,7 @@ function App() {
         <Header />
         <div className="mainScreen">
           <div className="mainScreenDecoration"></div>
-          <img src={mainScreenImg} alt="mainScreenImg" className="mainScreenImg" />
+          <img src={mainScreenImg} alt="mainScreenImg" className="mainScreenImg" data-aos="fade-up-left" />
           <div className="mainScreen_text">
             <div className="title">
               We Care About Your <br /> Dental Health.
@@ -100,14 +100,14 @@ function App() {
           </div>
         </div>
         <div className="aboutUsScreen">
-          <img src={abousUsimg} alt="abousUsimg" className="abousUsimg" />
+          <img src={abousUsimg} alt="abousUsimg" className="abousUsimg" data-aos="fade-down-right" />
           <div className="aboutUs_text">
             <div className="beforeTitle">About Us</div>
             <div className="title">Best Dental Clinic You Can Trust.</div>
             <div className="subtitle">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molesed erat tortor quis. Enim id lobortis massa egestas tortor ac ultrices semper.
             </div>
-            <div className="advantageCon" id="teethAdvantageCon">
+            <div className="advantageCon" id="teethAdvantageCon" data-aos="fade-down-left">
               <div className="advantageIcon" id="teethIcon">
                 <img src={teethSvg} alt="teethSvg" className="teethSvg" />
               </div>
@@ -116,7 +116,7 @@ function App() {
                 <div className="advantageSubtitle">Lorem ipsum dolor sit amet, consect etur adipiscing elit cursus.</div>
               </div>
             </div>
-            <div className="advantageCon" id="moneyAdvantageCon">
+            <div className="advantageCon" id="moneyAdvantageCon" data-aos="fade-down-left">
               <div className="advantageIcon" id="moneyIcon">
                 <img src={moneySvg} alt="moneySvg" className="moneySvg" />
               </div>
@@ -177,7 +177,7 @@ function App() {
             <div className="title">Easy Steps</div>
             <div className="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
 
-            <div className="step">
+            <div className="step" data-aos="fade-down-right">
               <div className="stepNumber">1</div>
               <div className="stepTextCon">
                 <div className="stepTitle">Select Your Doctor</div>
@@ -185,7 +185,7 @@ function App() {
               </div>
             </div>
 
-            <div className="step">
+            <div className="step" data-aos="fade-down-right">
               <div className="stepNumber">2</div>
               <div className="stepTextCon">
                 <div className="stepTitle">Make an Appoinment</div>
@@ -193,7 +193,7 @@ function App() {
               </div>
             </div>
 
-            <div className="step">
+            <div className="step" data-aos="fade-down-right">
               <div className="stepNumber">3</div>
               <div className="stepTextCon">
                 <div className="stepTitle">Meet your Doctor</div>

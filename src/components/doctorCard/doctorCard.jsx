@@ -3,7 +3,7 @@ import './doctorCard.css'
 import stethoscopeSvg from '../../assets/stethoscope.svg'
 const DoctorCard = (props) => {
     return (
-        <div className="doctorCard">
+        <div className="doctorCard" data-aos="flip-right" data-aos-duration="1200">
             <div className="doctorCard_imgCon">
                 <img src={props.img} alt="teethImg" className="doctorCard_img" />
             </div>

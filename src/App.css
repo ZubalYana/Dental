@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
+body{
+  overflow-x: hidden;
+}
 .wrap{
   width: 100%;
 }

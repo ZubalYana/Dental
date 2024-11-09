@@ -21,7 +21,7 @@ const Review = (props) => {
     };
 
     return (
-        <div className="review">
+        <div className="review" data-aos="flip-down">
             <img src={img} alt="Reviewer" className="reviewerImg" />
             <div className="reviewerName">{name}</div>
             <div className="reviewerText">{text}</div>
