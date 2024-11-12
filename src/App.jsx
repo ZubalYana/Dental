@@ -24,6 +24,7 @@ import Review from './components/Review/Review';
 import reviewerImg1 from '/review img 1.png';
 import reviewerImg2 from '/review img 2.png';
 import reviewerImg3 from '/review img 3.png';
+import MailForm from './components/MailForm/MailForm';
 function App() {
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
@@ -250,14 +251,7 @@ function App() {
           </div>
         </div>
         <div className="newsLetter">
-          <div className="newsLetterBox">
-            <div className="newsLetter_title">Our Newsletter</div>
-            <div className="newsLetter_subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
-            <div className="inputCon">
-              <input type="text" placeholder="Enter your email" id='emailInput' />
-              <div className='subscribeBtn'>Subscribe</div>
-            </div>
-          </div>
+        <MailForm/>
         </div>
         <div className="copyright">Copyright © 2020 All rights Reserved - Dental</div>
       </div>

@@ -354,7 +354,6 @@ button:hover .button-text {
   align-items: center;
   padding: 0 200px;
 }
-
 .stepsScreen .title{
   font-size: 48px;
 }
@@ -599,7 +598,7 @@ form button:hover{
   align-items: center;
   margin-top: 25px;
 }
-#emailInput{
+#email{
   width: 100%;
   height: 100%;
   border-radius: 15px;
