@@ -25,6 +25,7 @@ import reviewerImg1 from '/review img 1.png';
 import reviewerImg2 from '/review img 2.png';
 import reviewerImg3 from '/review img 3.png';
 import MailForm from './components/MailForm/MailForm';
+import AuthForm from './components/AuthForm/AuthForm';
 function App() {
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
@@ -76,6 +77,7 @@ function App() {
   return (
     <>
       <div className="wrap">
+        <AuthForm />
         <Header />
         <div className="mainScreen">
           <div className="mainScreenDecoration"></div>
@@ -221,7 +223,7 @@ function App() {
               </div>
               <div className="inputContainer">
               <input type="text" placeholder="Phone number" id='phone' />
-              <input type="text" placeholder="Email" id='email' />
+              <input type="text" placeholder="Email" id='appointmentEmail' />
               </div>
               <div className="inputContainer">
               <select name="department" id="department">
