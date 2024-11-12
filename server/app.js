@@ -16,9 +16,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../dist/index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 const emailSchema = new mongoose.Schema({
     email: String
