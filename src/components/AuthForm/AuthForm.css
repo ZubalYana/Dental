@@ -1,0 +1,88 @@
+.authFormCon{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000005e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    margin-top: -20px;
+}
+.authForm{
+    width: 550px;
+    height: 420px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 60px;
+    position: relative;
+}
+.logInForm{
+    display: none;
+}
+#authForm_xmark{
+    top: 40px;
+    right: 60px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 24px;
+}
+h2{
+    font-size: 28px;
+    font-weight: 500;
+    color: #031126;
+}
+input{
+    width: 100%;
+    border: #031126 1px solid;
+    outline: none;
+    height: 45px;
+    border-radius: 15px;
+    padding: 15px;
+}
+#registration_name, #registration_email{
+    margin-top: 15px;
+}
+.passwordCon{
+    width: 100%;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+}
+.password_eye{
+    position: absolute;
+    right: 15px;
+}
+#registerBtn{
+    width: 200px;
+    height: 60px;
+    background-color: #0098FF;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+}
+#registerBtn:hover{
+    background-color: #fff;
+    color: #0098FF;
+    border: 1px #0098FF solid;
+}
+#alreadyHaveAnAccount{
+    color: #031126b5;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 15px;
+    transition: 0.5s ease-in-out;
+}
+#alreadyHaveAnAccount:hover{
+    font-size: 16px;
+}
