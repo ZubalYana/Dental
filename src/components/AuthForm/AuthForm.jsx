@@ -26,7 +26,7 @@ export default function AuthForm() {
         <input type="text" placeholder='Email' id='logInEmail' />
         <input type="text" placeholder='Password' id='logInPassword' />
         <button id='logInBtn'>Log in</button>
-        <p>Don't have an account yet?</p>
+        <p id='doNotHaveAnAccount'>Don't have an account yet?</p>
       </div>
     </div>
     </div>

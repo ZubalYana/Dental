@@ -17,9 +17,12 @@
     padding: 40px 60px;
     position: relative;
 }
-.logInForm{
+.registrationForm{
     display: none;
 }
+/* .logInForm{
+    display: none;
+} */
 #authForm_xmark{
     top: 40px;
     right: 60px;
@@ -43,6 +46,9 @@ input{
 #registration_name, #registration_email{
     margin-top: 15px;
 }
+#logInEmail, #logInPassword{
+    margin-top: 15px;
+}
 .passwordCon{
     width: 100%;
     height: 45px;
@@ -55,7 +61,7 @@ input{
     position: absolute;
     right: 15px;
 }
-#registerBtn{
+#registerBtn, #logInBtn{
     width: 200px;
     height: 60px;
     background-color: #0098FF;
@@ -70,12 +76,12 @@ input{
     margin-top: 20px;
     transition: 0.3s ease-in-out;
 }
-#registerBtn:hover{
+#registerBtn, #logInBtn:hover{
     background-color: #fff;
     color: #0098FF;
     border: 1px #0098FF solid;
 }
-#alreadyHaveAnAccount{
+#alreadyHaveAnAccount, #doNotHaveAnAccount{
     color: #031126b5;
     cursor: pointer;
     font-size: 14px;
@@ -83,6 +89,6 @@ input{
     margin-top: 15px;
     transition: 0.5s ease-in-out;
 }
-#alreadyHaveAnAccount:hover{
+#alreadyHaveAnAccount, #doNotHaveAnAccount:hover{
     font-size: 16px;
 }
