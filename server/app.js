@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const PORT = 3000;
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
@@ -23,8 +24,15 @@ app.get('/', (req, res) => {
 const emailSchema = new mongoose.Schema({
     email: String
 })
-
 const Email = mongoose.model('Email', emailSchema)
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+})
+const User = mongoose.model('User', userSchema)
+
 app.post('/send', (req, res) => {
     const { email } = req.body
     console.log(email)
@@ -35,6 +43,26 @@ app.post('/send', (req, res) => {
     })
     newEmail.save()
 })
+app.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
+    if (!password) {
+        return res.status(400).send('Password is required');
+    }
+    try {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).send('User already exists');
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = new User({ name, email, password: hashedPassword });
+        await user.save();
+        res.send('User registered successfully');
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('An error occurred');
+    }
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT: ${PORT}`);
