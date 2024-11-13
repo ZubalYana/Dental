@@ -89,7 +89,12 @@ function App() {
   return (
     <>
       <div className="wrap">
-        <AuthForm isFormOpen={isFormOpen} formType={formType} closeForm={closeForm} />
+      <AuthForm 
+        isFormOpen={isFormOpen} 
+        formType={formType} 
+        closeForm={closeForm} 
+        setFormType={setFormType}
+      />
         <Header openFormToggle={openFormToggle} />
         <div className="mainScreen">
           <div className="mainScreenDecoration"></div>
