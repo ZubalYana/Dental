@@ -18,12 +18,6 @@
     padding: 40px 60px;
     position: relative;
 }
-.registrationForm{
-    display: none;
-}
-/* .logInForm{
-    display: none;
-} */
 #authForm_xmark{
     top: 40px;
     right: 60px;

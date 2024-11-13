@@ -27,9 +27,9 @@ import reviewerImg3 from '/review img 3.png';
 import MailForm from './components/MailForm/MailForm';
 import AuthForm from './components/AuthForm/AuthForm';
 function App() {
+  //numbers animation
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -74,11 +74,23 @@ function App() {
     return count;
   };
 
+  //auth form 
+  const [isFormOpen, setFormOpen] = useState(false);
+  const [formType, setFormType] = useState('login');
+  const openFormToggle = (type) => {
+    setFormType(type);
+    setFormOpen(true);
+  };
+  const closeForm = () => {
+    setFormOpen(false);
+  };
+
+
   return (
     <>
       <div className="wrap">
-        <AuthForm />
-        <Header />
+        <Header openFormToggle={openFormToggle} />
+        <AuthForm isFormOpen={isFormOpen} formType={formType} closeForm={closeForm} />
         <div className="mainScreen">
           <div className="mainScreenDecoration"></div>
           <img src={mainScreenImg} alt="mainScreenImg" className="mainScreenImg" data-aos="fade-up-left" />
