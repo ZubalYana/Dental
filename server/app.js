@@ -4,6 +4,8 @@ const path = require('path');
 const PORT = 3000;
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
@@ -60,6 +62,27 @@ app.post('/register', async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).send('An error occurred');
+    }
+});
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).send('Email and password are required');
+    }
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).send('User not found');
+        }
+        const passwordIsValid = await bcrypt.compare(password, user.password);
+        if (!passwordIsValid) {
+            return res.status(401).send('Invalid password');
+        }
+        const token = jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: '1h' });
+        res.status(200).send({ token });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred during login');
     }
 });
 
