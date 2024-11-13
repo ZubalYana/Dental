@@ -89,8 +89,8 @@ function App() {
   return (
     <>
       <div className="wrap">
-        <Header openFormToggle={openFormToggle} />
         <AuthForm isFormOpen={isFormOpen} formType={formType} closeForm={closeForm} />
+        <Header openFormToggle={openFormToggle} />
         <div className="mainScreen">
           <div className="mainScreenDecoration"></div>
           <img src={mainScreenImg} alt="mainScreenImg" className="mainScreenImg" data-aos="fade-up-left" />
