@@ -89,6 +89,11 @@ function App() {
   return (
     <>
       <div className="wrap">
+        <div className="videoPopupCon">
+          <div className="videoPopup">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-hVy_jxeMeA?si=28y5iH8RwhMjgq1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
       <AuthForm 
         isFormOpen={isFormOpen} 
         formType={formType} 
