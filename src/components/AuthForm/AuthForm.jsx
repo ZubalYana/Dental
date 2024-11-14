@@ -9,7 +9,9 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState(null);
-  const [showPassword, setShowPassword] = useState(false);
+  
+  const [showRegistrationPassword, setShowRegistrationPassword] = useState(false);
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +38,6 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
       setToken(null);
       localStorage.removeItem('token');
     }
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
   };
 
   return (
@@ -71,16 +69,16 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
             />
             <div className="passwordCon">
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showRegistrationPassword ? 'text' : 'password'}
                 placeholder="Password"
                 id="registration_password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <FontAwesomeIcon
-                icon={showPassword ? faEyeSlash : faEye}
+                icon={showRegistrationPassword ? faEyeSlash : faEye}
                 className="password_eye"
-                onClick={togglePasswordVisibility}
+                onClick={() => setShowRegistrationPassword(!showRegistrationPassword)}
               />
             </div>
 
@@ -101,16 +99,16 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
             />
             <div className="passwordCon">
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showLoginPassword ? 'text' : 'password'}
                 placeholder="Password"
                 id="logInPassword"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <FontAwesomeIcon
-                icon={showPassword ? faEyeSlash : faEye}
+                icon={showLoginPassword ? faEyeSlash : faEye}
                 className="password_eye"
-                onClick={togglePasswordVisibility}
+                onClick={() => setShowLoginPassword(!showLoginPassword)}
               />
             </div>
             <button id="logInBtn" onClick={handleLogin}>Log in</button>
