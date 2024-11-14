@@ -31,6 +31,7 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
       const response = await axios.post('http://localhost:3000/login', { email, password });
       console.log("Logged in");
       const token = response.data.token;
+      console.log(token)
       setToken(token);
       localStorage.setItem('token', token);
     } catch (err) {
