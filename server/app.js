@@ -28,7 +28,6 @@ const emailSchema = new mongoose.Schema({
     email: String
 })
 const Email = mongoose.model('Email', emailSchema)
-
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
@@ -95,7 +94,6 @@ const transporter = nodemailer.createTransport({
         pass: 'ioil iqsl jwbr skqn'
     }
 });
-
 //newsLetter sending
 app.post('/send-newsletter', async (req, res) => {
     const { content } = req.body;
@@ -123,7 +121,6 @@ app.post('/send-newsletter', async (req, res) => {
         res.status(500).send('Error sending newsletter');
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT: ${PORT}`);

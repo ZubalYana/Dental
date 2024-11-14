@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AuthForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function AuthForm({ isFormOpen, formType, closeForm, setFormType }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState(null); // Define token state here
+  const [token, setToken] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,13 +29,17 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
       const response = await axios.post('http://localhost:3000/login', { email, password });
       console.log("Logged in");
       const token = response.data.token;
-      setToken(token); // Set the token in state
-      localStorage.setItem('token', token); // Store token in localStorage
+      setToken(token);
+      localStorage.setItem('token', token);
     } catch (err) {
       console.log('User not found');
       setToken(null);
-      localStorage.removeItem('token'); // Remove token from localStorage if login fails
+      localStorage.removeItem('token');
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -45,7 +50,7 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
       }}
     >
       <div className="authForm">
-        <FontAwesomeIcon icon={faXmark} id='authForm_xmark' onClick={closeForm} />
+        <FontAwesomeIcon icon={faXmark} id="authForm_xmark" onClick={closeForm} />
 
         {formType === 'signup' ? (
           <div className="registrationForm">
@@ -66,20 +71,21 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
             />
             <div className="passwordCon">
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 id="registration_password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <FontAwesomeIcon icon={faEye} className="password_eye" />
+              <FontAwesomeIcon
+                icon={showPassword ? faEyeSlash : faEye}
+                className="password_eye"
+                onClick={togglePasswordVisibility}
+              />
             </div>
 
             <button id="registerBtn" onClick={handleSubmit}>Register</button>
-            <p 
-              id='alreadyHaveAnAccount' 
-              onClick={() => setFormType('login')}
-            >
+            <p id="alreadyHaveAnAccount" onClick={() => setFormType('login')}>
               Already have an account?
             </p>
           </div>
@@ -91,20 +97,24 @@ export default function AuthForm({ isFormOpen, formType, closeForm, setFormType 
               placeholder="Email"
               id="logInEmail"
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Track email in state
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              type="password"
-              placeholder="Password"
-              id="logInPassword"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)} // Track password in state
-            />
+            <div className="passwordCon">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                id="logInPassword"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <FontAwesomeIcon
+                icon={showPassword ? faEyeSlash : faEye}
+                className="password_eye"
+                onClick={togglePasswordVisibility}
+              />
+            </div>
             <button id="logInBtn" onClick={handleLogin}>Log in</button>
-            <p 
-              id='doNotHaveAnAccount' 
-              onClick={() => setFormType('signup')}
-            >
+            <p id="doNotHaveAnAccount" onClick={() => setFormType('signup')}>
               Don't have an account yet?
             </p>
           </div>
