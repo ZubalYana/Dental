@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import mainScreenImg from '/main screen img.png';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 library.add(faPlay);
 import abousUsimg from '/about us screen img.png';
@@ -91,6 +92,8 @@ function App() {
       <div className="wrap">
         <div className="videoPopupCon">
           <div className="videoPopup">
+          <FontAwesomeIcon icon={faXmark} id='closeVideo' onClick={closeForm} />
+          <h3>Watch Video</h3>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/-hVy_jxeMeA?si=28y5iH8RwhMjgq1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
