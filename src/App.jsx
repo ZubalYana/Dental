@@ -91,6 +91,15 @@ function App() {
   const openVideoPopup = () => setVideoPopupOpen(true);
   const closeVideoPopup = () => setVideoPopupOpen(false);
 
+  //scroll
+  const makeAnAppointmentRef = useRef(null);
+  const scrollToAppointment = () => {
+    makeAnAppointmentRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <>
       <div className="wrap">
@@ -132,7 +141,7 @@ function App() {
               Dental or oral health is concerned with your teeth, gums, and mouth. A healthy mouth is free of infections, injuries, and other problems.
             </div>
             <div className="button_video_con">
-              <div className="mainScreen_btn">Appointment</div>
+              <div className="mainScreen_btn" id='mainScreen_btn' onClick={scrollToAppointment}>Appointment</div>
               <div id="container">
                 <button className="learn-more">
                   <span className="circle" aria-hidden="true">
@@ -249,7 +258,7 @@ function App() {
           </div>
           <img src={stepsImg} alt="stepsImg" className="stepsImg" />
         </div>
-        <div className="makeAnAppointmentScreen">
+        <div className="makeAnAppointmentScreen" ref={makeAnAppointmentRef} id="makeAnAppointmentScreen">
           <div className="title">Make An Appointment</div>
           <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
           <div className="makeAnAppointment_con">
