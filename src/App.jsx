@@ -86,17 +86,34 @@ function App() {
     setFormOpen(false);
   };
 
+  //video popup
+  const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
+  const openVideoPopup = () => setVideoPopupOpen(true);
+  const closeVideoPopup = () => setVideoPopupOpen(false);
 
   return (
     <>
       <div className="wrap">
-        <div className="videoPopupCon">
-          <div className="videoPopup">
-          <FontAwesomeIcon icon={faXmark} id='closeVideo' onClick={closeForm} />
-          <h3>Watch Video</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/-hVy_jxeMeA?si=28y5iH8RwhMjgq1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        </div>
+      <div
+  className="videoPopupCon"
+  style={{ display: isVideoPopupOpen ? "flex" : "none" }}
+>
+  <div className="videoPopup">
+    <FontAwesomeIcon icon={faXmark} id="closeVideo" onClick={closeVideoPopup} />
+    <h3>Watch Video</h3>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/-hVy_jxeMeA?si=28y5iH8RwhMjgq1f"
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
+
       <AuthForm 
         isFormOpen={isFormOpen} 
         formType={formType} 
@@ -121,7 +138,7 @@ function App() {
                   <span className="circle" aria-hidden="true">
                     <FontAwesomeIcon icon={faPlay} className="playIcon" />
                   </span>
-                  <span className="button-text">Watch Video</span>
+                  <span className="button-text" onClick={openVideoPopup}>Watch Video</span>
                 </button>
               </div>
             </div>
