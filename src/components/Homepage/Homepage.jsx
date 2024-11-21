@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './Homepage.css';
+import "../../App.css"; 
 import AuthForm from '../AuthForm/AuthForm';
 import Header from '../Header/Header';
 import ServicesCard from '../servicesCard/servicesCard';
@@ -105,7 +105,7 @@ function Homepage() {
 
       {/* About Us Section */}
       <div className="aboutUsScreen">
-        {/* <img src={aboutUsImg} alt="aboutUsImg" className="aboutUsimg" data-aos="fade-down-right" /> */}
+        <img src={aboutUsImg} alt="aboutUsImg" className="aboutUsimg" data-aos="fade-down-right" style={{ width: '470px' }} />
         <div className="aboutUs_text">
           <div className="beforeTitle">About Us</div>
           <div className="title">Best Dental Clinic You Can Trust.</div>
@@ -197,7 +197,7 @@ function Homepage() {
           </div>
         </div>
         <div className="stepsImgCon">
-          <img src={stepsImg} alt="stepsImg" />
+          <img src={stepsImg} alt="stepsImg" style={{ width: '470px' }} />
         </div>
       </div>
 
@@ -205,7 +205,7 @@ function Homepage() {
       <div className="makeAnAppointmentScreen" ref={makeAnAppointmentRef}>
         <div className="makeAnAppointmentTitle">Make An Appointment</div>
         <div className="makeAnAppointmentImgCon">
-          <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" />
+          <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" width={`550px`} />
         </div>
         <div className="makeAnAppointmentBtnCon">
           <button className="makeAnAppointmentBtn" onClick={scrollToAppointment}>
