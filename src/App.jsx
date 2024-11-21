@@ -27,7 +27,7 @@ import reviewerImg2 from '/review img 2.png';
 import reviewerImg3 from '/review img 3.png';
 import MailForm from './components/MailForm/MailForm';
 import AuthForm from './components/AuthForm/AuthForm';
-import Feedback from './components/Feedback/Feedback';
+import Homepage from './components/Homepage/Homepage';
 function App() {
   //numbers animation
   const [statsInView, setStatsInView] = useState(false);
@@ -103,10 +103,8 @@ function App() {
 
   return (
     <>
-    <div className="admin">
-      <Feedback />
-    </div>
-      <div className="wrap">
+    <Homepage>
+    <div className="wrap">
       <div
   className="videoPopupCon"
   style={{ display: isVideoPopupOpen ? "flex" : "none" }}
@@ -312,6 +310,7 @@ function App() {
         </div>
         <div className="copyright">Copyright © 2020 All rights Reserved - Dental</div>
       </div>
+    </Homepage>
     </>
   );
 }

@@ -122,6 +122,10 @@ app.post('/send-newsletter', async (req, res) => {
     }
 });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/admin.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on PORT: ${PORT}`);
 });
