@@ -195,9 +195,32 @@ function Homepage() {
           <div className="subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
+          <div className="step" data-aos="fade-down-right">
+              <div className="stepNumber">1</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Select Your Doctor</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
+
+            <div className="step" data-aos="fade-down-right">
+              <div className="stepNumber">2</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Make an Appoinment</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
+
+            <div className="step" data-aos="fade-down-right">
+              <div className="stepNumber">3</div>
+              <div className="stepTextCon">
+                <div className="stepTitle">Meet your Doctor</div>
+                <div className="stepDescription">Lorem ipsum dolor sit amet,sectetur adipiselit sed temp incididunt ut labore.</div>
+              </div>
+            </div>
         </div>
         <div className="stepsImgCon">
-          <img src={stepsImg} alt="stepsImg" style={{ width: '470px' }} />
+          <img src={stepsImg} alt="stepsImg" style={{ width: '470px', marginLeft: '30px' }} />
         </div>
       </div>
 
