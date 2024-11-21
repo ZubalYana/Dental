@@ -260,20 +260,24 @@ function Homepage() {
 
       {/* Reviews */}
       <div className="reviewScreen">
-        <div className="title">What Our Clients Say</div>
-        <div className="reviewCardsContainer">
-          {[
-            { name: 'Andrew Smith', position: 'Patient', img: reviewerImg1, text: 'Best dental clinic experience!' },
-            { name: 'Mikie Dave', position: 'Patient', img: reviewerImg2, text: 'Highly recommend this clinic!' },
-            { name: 'Barbara Johnson', position: 'Patient', img: reviewerImg3, text: 'Wonderful service and staff!' },
-          ].map(({ name, position, img, text }, index) => (
-            <Review key={index} name={name} position={position} img={img} text={text} />
-          ))}
-        </div>
+  <div className="title">What Our Clients Say</div>
+  <div className="subtitle">
+    We believe that focus and our associated programs are most instrumental in reducing readmissions and managing.
+  </div>
+  <div className="reviewCardsContainer">
+    {[
+      { name: 'Andrew Smith', position: 'Patient', img: reviewerImg1, text: 'Best dental clinic experience!' },
+      { name: 'Mikie Dave', position: 'Patient', img: reviewerImg2, text: 'Highly recommend this clinic!' },
+      { name: 'Barbara Johnson', position: 'Patient', img: reviewerImg3, text: 'Wonderful service and staff!' },
+    ].map(({ name, position, img, text }, index) => (
+      <Review key={index} name={name} position={position} img={img} text={text} />
+    ))}
+  </div>
       </div>
 
+
       {/* Contact Form */}
-      <div className="contactFormScreen">
+      <div className="newsLetter">
         <MailForm />
       </div>
     </div>
