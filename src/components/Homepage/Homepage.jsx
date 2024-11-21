@@ -225,17 +225,38 @@ function Homepage() {
       </div>
 
       {/* Make An Appointment */}
-      <div className="makeAnAppointmentScreen" ref={makeAnAppointmentRef}>
-        <div className="makeAnAppointmentTitle">Make An Appointment</div>
-        <div className="makeAnAppointmentImgCon">
-          <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" width={`550px`} />
+      <div className="makeAnAppointmentScreen" ref={makeAnAppointmentRef} id="makeAnAppointmentScreen">
+          <div className="title">Make An Appointment</div>
+          <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
+          <div className="makeAnAppointment_con">
+            <form action="submit">
+              <h4>Appointment</h4>
+              <div className="inputContainer">
+                <input type="text" placeholder="Patient Name" id='name' />
+                <select name="gender" id="gender" placeholder="Gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="inputContainer">
+              <input type="text" placeholder="Phone number" id='phone' />
+              <input type="text" placeholder="Email" id='appointmentEmail' />
+              </div>
+              <div className="inputContainer">
+              <select name="department" id="department">
+                <option value="department">Department 1</option>
+                <option value="department">Department 2</option>
+                <option value="department">Department 3</option>
+              </select>
+              <input type="date" id="date" placeholder="Date" />
+              </div>
+              <textarea name="details" id="details" placeholder='More details'></textarea>
+              <button type="submit">Send Massage</button>
+            </form>
+            <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
+          </div>
         </div>
-        <div className="makeAnAppointmentBtnCon">
-          <button className="makeAnAppointmentBtn" onClick={scrollToAppointment}>
-            Book Now
-          </button>
-        </div>
-      </div>
 
       {/* Reviews */}
       <div className="reviewScreen">
