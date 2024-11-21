@@ -280,6 +280,8 @@ function Homepage() {
       <div className="newsLetter">
         <MailForm />
       </div>
+
+      <div className="copyright">Copyright © 2020 All rights Reserved - Dental</div>
     </div>
   );
 }
