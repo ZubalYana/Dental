@@ -266,9 +266,9 @@ function Homepage() {
   </div>
   <div className="reviewCardsContainer">
     {[
-      { name: 'Andrew Smith', position: 'Patient', img: reviewerImg1, text: 'Best dental clinic experience!' },
-      { name: 'Mikie Dave', position: 'Patient', img: reviewerImg2, text: 'Highly recommend this clinic!' },
-      { name: 'Barbara Johnson', position: 'Patient', img: reviewerImg3, text: 'Wonderful service and staff!' },
+      { name: 'Andrew Smith', position: 'Patient', img: reviewerImg1, text: 'Best dental clinic experience!', rate: 5 },
+      { name: 'Mikie Dave', position: 'Patient', img: reviewerImg2, text: 'Highly recommend this clinic!', rate: 4 },
+      { name: 'Barbara Johnson', position: 'Patient', img: reviewerImg3, text: 'Wonderful service and staff!', rate: 5 },
     ].map(({ name, position, img, text }, index) => (
       <Review key={index} name={name} position={position} img={img} text={text} />
     ))}
