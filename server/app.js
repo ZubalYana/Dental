@@ -20,10 +20,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
-});
 
+
+//mongoose schemas
 const emailSchema = new mongoose.Schema({
     email: String
 })
@@ -34,7 +33,13 @@ const userSchema = new mongoose.Schema({
     password: String
 })
 const User = mongoose.model('User', userSchema)
+const Feedback = mongoose.model('Feedback', {
+    name: String,
+    feedback: String,
+    rating: Number
+})
 
+//newsLetter sending
 app.post('/send', (req, res) => {
     const { email } = req.body
     console.log(email)
@@ -45,6 +50,8 @@ app.post('/send', (req, res) => {
     })
     newEmail.save()
 })
+
+//auth
 app.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
     if (!password) {
@@ -122,10 +129,26 @@ app.post('/send-newsletter', async (req, res) => {
     }
 });
 
+//feedback sending
+app.post('/feedback', (req, res) => {
+    console.log(req.body);
+    const feedback = new Feedback(req.body);
+    feedback.save().then(() => {
+        console.log('Feedback saved');
+        res.sendStatus(200);
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    });
+});
+
+//basic endpoints
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/admin.html'));
 });
-
 app.listen(PORT, () => {
     console.log(`Server running on PORT: ${PORT}`);
 });
