@@ -2,6 +2,7 @@ import React from 'react'
 import './AdminPanel.css'
 import Feedback from '../Feedback/Feedback'
 import AdminHeader from '../AdminHeader/AdminHeader'
+import UsersFeedbacksPanel from '../UsersFeedbacksPanel/UsersFeedbacksPanel'
 export default function AdminPanel() {
   return (
     <>
@@ -9,6 +10,7 @@ export default function AdminPanel() {
       <AdminHeader />
       <div className="feedbackScreen">
       <Feedback />
+      <UsersFeedbacksPanel />
       </div>
     </div>
     </>

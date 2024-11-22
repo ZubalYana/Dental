@@ -141,6 +141,15 @@ app.post('/feedback', (req, res) => {
         res.sendStatus(500);
     });
 });
+//get all the feedbacks
+app.get('/feedbacks', (req, res) => {
+    Feedback.find().then(feedbacks => {
+        res.send(feedbacks);
+    }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+    });
+})
 
 //basic endpoints
 app.get('/', (req, res) => {
