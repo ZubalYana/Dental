@@ -1,0 +1,51 @@
+.feedbackContainer{
+    display: flex;
+    flex-direction: column;
+}
+.feedbackContainer h2{
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 300;
+}
+#feedback{
+    width: 620px;
+    height: 200px;
+    resize: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.nameRatingCon{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+.nameRatingCon input, select{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 15px;
+    outline: none;
+    border: 1px solid #333;
+}
+.feedback_btn{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #49B3FB;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.feedback_btn:hover{
+    background-color: #fff;
+    color: #49B3FB;
+    box-shadow: 0 0 15px #49B3FB
+}
