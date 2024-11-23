@@ -4,7 +4,7 @@ import logoSvg from '../../assets/logo.svg'
 export default function AdminHeader() {
   return (
     <>
-    <header>
+    <header className='adminHeader'>
     <div className="logo">
         <img src={logoSvg} alt="logo" className="logoSvg"/>
         Dental Admin

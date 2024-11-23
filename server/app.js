@@ -142,14 +142,15 @@ app.post('/feedback', (req, res) => {
     });
 });
 //get all the feedbacks
-app.get('/feedbacks', (req, res) => {
-    Feedback.find().then(feedbacks => {
-        res.send(feedbacks);
-    }).catch(err => {
-        console.log(err);
-        res.sendStatus(500);
-    });
-})
+app.get('/api/feedbacks', async (req, res) => {
+    try {
+        const feedbacks = await Feedback.find(); 
+        res.status(200).json(feedbacks); 
+    } catch (error) {
+        console.error('Error fetching feedbacks:', error);
+        res.status(500).json({ error: 'Failed to fetch feedbacks' });
+    }
+});
 
 //basic endpoints
 app.get('/', (req, res) => {

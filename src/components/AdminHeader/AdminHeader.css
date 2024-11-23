@@ -1,4 +1,4 @@
-header{
+.adminHeader header{
     width: 100%;
     height: 60px;
     display: flex;
@@ -10,7 +10,7 @@ header{
     margin-top: 20px;
 
 }
-.logo{
+.adminHeader .logo{
     width: 220px;
     height: 60px;
     display: flex;
@@ -20,7 +20,7 @@ header{
     font-weight: 600;
     justify-content: space-between;
 }
-.nav{
+.adminHeader .nav{
     width: 500px;
     display: flex;
     justify-content: space-between;
