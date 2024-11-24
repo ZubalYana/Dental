@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as regularStar } from "@fortawesome/free-regular-svg-icons";
+import defaultUserPic from "/default user picture.png";
 
 library.add(solidStar, regularStar);
 
@@ -22,7 +23,11 @@ const Review = (props) => {
 
     return (
         <div className="review" data-aos="flip-down">
-            <img src={img} alt="Reviewer" className="reviewerImg" />
+            <img 
+                src={img || defaultUserPic}
+                alt="Reviewer" 
+                className="reviewerImg" 
+            />
             <div className="reviewerName">{name}</div>
             <div className="reviewerText">{text}</div>
             <div className="stars">{renderStars()}</div>
