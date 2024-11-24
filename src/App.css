@@ -443,7 +443,7 @@ form{
   width: 530px;
 }
 form input, select, textarea{
-  outline: none;
+  outline: none !important;
 }
 .inputContainer{
   width: 100%;
@@ -458,10 +458,10 @@ form input, select, textarea{
   margin: 20px 0 10px 0;
 }
 .inputContainer input, select{
-  width: 48%;
+  width: 48% !important;
   height: 60px;
   border-radius: 14px;
-  border: 1px solid #CED6DB;
+  border: 1px solid #CED6DB !important;
   padding: 0 15px;
   font-size: 13px;
   font-weight: 400;
