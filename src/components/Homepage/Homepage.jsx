@@ -18,9 +18,7 @@ import doctor2 from '/doctor 2.png';
 import doctor3 from '/doctor 3.png';
 import stepsImg from '/easy steps img.png';
 import makeAnAppointmentImg from '/make an appointment img.png';
-import reviewerImg1 from '/review img 1.png';
-import reviewerImg2 from '/review img 2.png';
-import reviewerImg3 from '/review img 3.png';
+import Feedback from '../Feedback/Feedback'
 import mainScreenImg from '/main screen img.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -31,6 +29,9 @@ function Homepage() {
   const [isFormOpen, setFormOpen] = useState(false);
   const [formType, setFormType] = useState('login');
   const [feedbacks, setFeedbacks] = useState([]);
+  const [isFeedbackOpen, setFeedbackOpen] = useState(false);
+  const openFeedbackPopup = () => setFeedbackOpen(true);
+  const closeFeedbackPopup = () => setFeedbackOpen(false);
   const makeAnAppointmentRef = useRef(null);
 
   // Scroll functionality
@@ -279,6 +280,15 @@ function Homepage() {
       <Review key={index} name={name} rate={rating} img={img} text={feedback} />
     ))}
   </div>
+  <div className="giveFeedbackBtn" onClick={openFeedbackPopup}><span className='plus'>+</span> Leave my review</div>
+      </div>
+
+      {/* Feedback popup */}
+      <div className="feedbackPopupCon" style={{ display: isFeedbackOpen ? 'flex' : 'none' }}>
+        <div className="feedbackPopup">
+          <FontAwesomeIcon icon={faXmark} id="closeFeedback" onClick={closeFeedbackPopup} />
+          <Feedback />
+        </div>
       </div>
 
 
