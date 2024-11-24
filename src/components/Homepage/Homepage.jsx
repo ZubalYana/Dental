@@ -58,6 +58,8 @@ function Homepage() {
     })
   }, [])
 
+  console.log(feedbacks)
+
   return (
     <div>
       {/* Video Popup */}
@@ -273,8 +275,8 @@ function Homepage() {
     We believe that focus and our associated programs are most instrumental in reducing readmissions and managing.
   </div>
   <div className="reviewCardsContainer">
-   {feedbacks.map(({ name, position, img, text }, index) => (
-      <Review key={index} name={name} position={position} img={img} text={text} />
+   {feedbacks.map(({ name, rating, img, text }, index) => (
+      <Review key={index} name={name} rate={rating} img={img} text={text} />
     ))}
   </div>
       </div>
