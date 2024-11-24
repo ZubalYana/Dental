@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import "../../App.css"; 
+import axios from "axios";
 import AuthForm from '../AuthForm/AuthForm';
 import Header from '../Header/Header';
 import ServicesCard from '../servicesCard/servicesCard';
@@ -29,6 +30,7 @@ function Homepage() {
   const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
   const [isFormOpen, setFormOpen] = useState(false);
   const [formType, setFormType] = useState('login');
+  const [feedbacks, setFeedbacks] = useState([]);
   const makeAnAppointmentRef = useRef(null);
 
   // Scroll functionality
@@ -49,6 +51,12 @@ function Homepage() {
   // Open and close video popup
   const openVideoPopup = () => setVideoPopupOpen(true);
   const closeVideoPopup = () => setVideoPopupOpen(false);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/feedbacks').then(res => { 
+      setFeedbacks(res.data)
+    })
+  }, [])
 
   return (
     <div>
@@ -265,11 +273,7 @@ function Homepage() {
     We believe that focus and our associated programs are most instrumental in reducing readmissions and managing.
   </div>
   <div className="reviewCardsContainer">
-    {[
-      { name: 'Andrew Smith', position: 'Patient', img: reviewerImg1, text: 'Best dental clinic experience!', rate: 5 },
-      { name: 'Mikie Dave', position: 'Patient', img: reviewerImg2, text: 'Highly recommend this clinic!', rate: 4 },
-      { name: 'Barbara Johnson', position: 'Patient', img: reviewerImg3, text: 'Wonderful service and staff!', rate: 5 },
-    ].map(({ name, position, img, text }, index) => (
+   {feedbacks.map(({ name, position, img, text }, index) => (
       <Review key={index} name={name} position={position} img={img} text={text} />
     ))}
   </div>
