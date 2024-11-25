@@ -22,7 +22,8 @@ const Review = (props) => {
     };
 
     return (
-        <div className="review" data-aos="flip-down">
+        <div className="reviewCon">
+                    <div className="review" data-aos="flip-down">
             <img 
                 src={img || defaultUserPic}
                 alt="Reviewer" 
@@ -32,6 +33,8 @@ const Review = (props) => {
             <div className="reviewerText">{text}</div>
             <div className="stars">{renderStars()}</div>
         </div>
+        </div>
+
     );
 };
 

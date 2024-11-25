@@ -20,6 +20,7 @@ export default function ReviewsSlider() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        adaptiveHeight: true,
     };
     return (
         <Slider {...settigs}>

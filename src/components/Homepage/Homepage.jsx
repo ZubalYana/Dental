@@ -276,9 +276,6 @@ function Homepage() {
     We believe that focus and our associated programs are most instrumental in reducing readmissions and managing.
   </div>
   <div className="reviewCardsContainer">
-   {/* {feedbacks.map(({ name, rating, img, feedback }, index) => (
-      <Review key={index} name={name} rate={rating} img={img} text={feedback} />
-    ))} */}
     <ReviewsSlider />
   </div>
   <div className="giveFeedbackBtn" onClick={openFeedbackPopup}><span className='plus'>+</span> Leave my review</div>
