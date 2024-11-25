@@ -6,7 +6,6 @@ import axios from 'axios';
 import Review from '../Review/Review';
 export default function ReviewsSlider() {
 
-
     const [slides, setSlides] = useState([]);
 
     useEffect(() => {
@@ -18,7 +17,6 @@ export default function ReviewsSlider() {
 
     const settigs = {
         dots: true,
-        infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -31,3 +29,4 @@ export default function ReviewsSlider() {
         </Slider>
     )
 }
+  

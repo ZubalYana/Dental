@@ -553,9 +553,9 @@ form button:hover{
 }
 .reviewCardsContainer {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  height: 500px;
   margin-top: 60px;
+  position: relative;
 }
 .giveFeedbackBtn{
   width: 200px;
