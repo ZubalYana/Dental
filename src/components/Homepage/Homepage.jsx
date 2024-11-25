@@ -22,7 +22,7 @@ import Feedback from '../Feedback/Feedback'
 import mainScreenImg from '/main screen img.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faXmark } from '@fortawesome/free-solid-svg-icons';
-
+import ReviewsSlider from '../ReviewsSlider/ReviewsSlider';
 function Homepage() {
   // State for video popup, form, and scrolling
   const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
@@ -276,9 +276,10 @@ function Homepage() {
     We believe that focus and our associated programs are most instrumental in reducing readmissions and managing.
   </div>
   <div className="reviewCardsContainer">
-   {feedbacks.map(({ name, rating, img, feedback }, index) => (
+   {/* {feedbacks.map(({ name, rating, img, feedback }, index) => (
       <Review key={index} name={name} rate={rating} img={img} text={feedback} />
-    ))}
+    ))} */}
+    <ReviewsSlider />
   </div>
   <div className="giveFeedbackBtn" onClick={openFeedbackPopup}><span className='plus'>+</span> Leave my review</div>
       </div>
