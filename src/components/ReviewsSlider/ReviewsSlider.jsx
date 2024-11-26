@@ -16,11 +16,12 @@ export default function ReviewsSlider() {
       }, [])
 
     const settigs = {
-        dots: true,
-        speed: 500,
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
         slidesToShow: 3,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
+        speed: 500,
     };
     return (
         <Slider {...settigs}>
