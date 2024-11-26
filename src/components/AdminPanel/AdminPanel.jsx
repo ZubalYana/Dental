@@ -9,7 +9,6 @@ export default function AdminPanel() {
     <div className="wrap">
       <AdminHeader />
       <div className="feedbackScreen">
-      <Feedback />
       <UsersFeedbacksPanel />
       </div>
     </div>
