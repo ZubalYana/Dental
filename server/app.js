@@ -33,11 +33,12 @@ const userSchema = new mongoose.Schema({
     password: String
 })
 const User = mongoose.model('User', userSchema)
-const Feedback = mongoose.model('Feedback', {
-    name: String,
-    feedback: String,
-    rating: Number
-})
+const Feedback = new mongoose.Schema({
+    name: { type: String, required: true },
+    feedback: { type: String, required: true },
+    rating: { type: Number, required: true },
+    accepted: { type: Boolean, default: false },
+  });
 
 //newsLetter sending
 app.post('/send', (req, res) => {
