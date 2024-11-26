@@ -10,7 +10,11 @@ export default function ReviewsSlider() {
 
     useEffect(() => {
         axios.get('http://localhost:3000/api/feedbacks').then(res => { 
-            setSlides(res.data);
+            for(let review of res.data){
+                if(review.accepted == true){
+                    setSlides(review)
+                }
+            }
             console.log(res.data);
         })
       }, [])
