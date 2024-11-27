@@ -1,25 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
 import Review from '../Review/Review';
-export default function ReviewsSlider() {
 
+export default function ReviewsSlider() {
     const [slides, setSlides] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/feedbacks').then(res => { 
-            for(let review of res.data){
-                if(review.accepted == true){
-                    setSlides(review)
-                }
-            }
-            console.log(res.data);
-        })
-      }, [])
+        axios.get('http://localhost:3000/api/feedbacks')
+            .then(res => {
+                const acceptedReviews = res.data.filter(review => review.accepted === true);
+                setSlides(acceptedReviews);
+            })
+            .catch(err => console.error('Error fetching feedbacks:', err));
+    }, []);
 
-    const settigs = {
+    const settings = {
         className: "center",
         centerMode: true,
         infinite: true,
@@ -27,12 +25,12 @@ export default function ReviewsSlider() {
         slidesToShow: 3,
         speed: 500,
     };
+
     return (
-        <Slider {...settigs}>
-   {slides.map(({ name, rating, img, feedback }, index) => (
-      <Review key={index} name={name} rate={rating} img={img} text={feedback} />
-    ))}
+        <Slider {...settings}>
+            {slides.map(({ name, rating, img, feedback }, index) => (
+                <Review key={index} name={name} rate={rating} img={img} text={feedback} />
+            ))}
         </Slider>
-    )
+    );
 }
-  

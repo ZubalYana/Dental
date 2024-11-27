@@ -152,7 +152,47 @@ app.get('/api/feedbacks', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch feedbacks' });
     }
 });
+//reject feedback
+app.delete('/api/feedbacks/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: 'Invalid ID format' });
+        }
 
+        const feedback = await Feedback.findById(id);
+        if (!feedback) {
+            return res.status(404).json({ error: 'Feedback not found' });
+        }
+
+        await feedback.remove();
+        res.status(200).json({ message: 'Feedback deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting feedback:', error);
+        res.status(500).json({ error: 'Failed to delete feedback' });
+    }
+});
+//accept feedback
+app.put('/api/feedbacks/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: 'Invalid ID format' });
+        }
+
+        const feedback = await Feedback.findById(id);
+        if (!feedback) {
+            return res.status(404).json({ error: 'Feedback not found' });
+        }
+
+        feedback.accepted = true;
+        await feedback.save();
+        res.status(200).json({ message: 'Feedback accepted successfully' });
+    } catch (error) {
+        console.error('Error accepting feedback:', error);
+        res.status(500).json({ error: 'Failed to accept feedback' });
+    }
+});
 //basic endpoints
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
