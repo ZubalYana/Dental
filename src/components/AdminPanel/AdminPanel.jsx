@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './AdminPanel.css';
-import Feedback from '../Feedback/Feedback';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
+import defaultUserPic from "/default user picture.png";
 import AdminHeader from '../AdminHeader/AdminHeader';
 import axios from 'axios';
 
@@ -14,17 +17,34 @@ export default function AdminPanel() {
     });
   }, []);
 
+  const renderStars = (rate) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <FontAwesomeIcon
+        key={index}
+        icon={index < rate ? solidStar : regularStar}
+        className="starIcon"
+      />
+    ));
+  };
+
   return (
     <>
       <div className="wrap">
         <AdminHeader />
         <div className="feedbackScreen">
           <div className="feedbacksToCheckCon">
-            {reviewsToCheck.map(({ id, name, rating, img, feedback }) => (
-              <div key={id}>
-                <h2>{name}</h2>
-                <p>{rating}</p>
-                <p>{feedback}</p>
+            {reviewsToCheck.map(({ id, name, img, feedback, rating }) => (
+              <div className="reviewCon" key={id}>
+                <div className="review">
+                  <img 
+                    src={img || defaultUserPic}
+                    alt="Reviewer" 
+                    className="reviewerImg" 
+                  />
+                  <div className="reviewerName">{name}</div>
+                  <div className="reviewerText">{feedback}</div>
+                  <div className="stars">{renderStars(rating)}</div>
+                </div>
               </div>
             ))}
           </div>
