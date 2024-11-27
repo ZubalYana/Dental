@@ -33,6 +33,8 @@ export default function AdminPanel() {
         <AdminHeader />
         <div className="feedbackScreen">
           <div className="feedbacksToCheckCon">
+            <h2>New reviews to check:</h2>
+            <div className="feedbacksToCheck">
             {reviewsToCheck.map(({ id, name, img, feedback, rating }) => (
               <div className="reviewCon" key={id}>
                 <div className="review">
@@ -47,6 +49,7 @@ export default function AdminPanel() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>
