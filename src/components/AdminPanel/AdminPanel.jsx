@@ -31,7 +31,7 @@ export default function AdminPanel() {
 
   return (
     <>
-      <div className="wrap">
+      <div className="wrap adminWrap">
         <AdminHeader />
         <div className="feedbackScreen">
           <div className="feedbacksToCheckCon">
