@@ -1,3 +1,4 @@
+/* feedback */
 .feedbackScreen{
     width: 100%;
     height: 85vh;
@@ -15,3 +16,30 @@
 .reviewCon{
     margin-right: 30px;
 }
+.reviewActions{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 5px;
+    padding: 15px;
+}
+.reviewAction{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+#rejectReview{
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+#acceptReview{
+    border: 2px solid #20d500;
+    color: #20d500;
+}
+/* feedback */
