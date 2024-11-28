@@ -156,22 +156,24 @@ app.get('/api/feedbacks', async (req, res) => {
 app.delete('/api/feedbacks/:id', async (req, res) => {
     try {
         const { id } = req.params;
+
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ error: 'Invalid ID format' });
         }
 
-        const feedback = await Feedback.findById(id);
-        if (!feedback) {
+        const result = await Feedback.deleteOne({ _id: id });
+
+        if (result.deletedCount === 0) {
             return res.status(404).json({ error: 'Feedback not found' });
         }
 
-        await feedback.remove();
         res.status(200).json({ message: 'Feedback deleted successfully' });
     } catch (error) {
         console.error('Error deleting feedback:', error);
         res.status(500).json({ error: 'Failed to delete feedback' });
     }
 });
+
 //accept feedback
 app.put('/api/feedbacks/:id', async (req, res) => {
     try {
