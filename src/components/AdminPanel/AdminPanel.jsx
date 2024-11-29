@@ -11,7 +11,7 @@ import AdminHeader from '../AdminHeader/AdminHeader';
 import axios from 'axios';
 
 export default function AdminPanel() {
-  const [currentScreen, setCurrentScreen] = useState('feedback'); // Default screen
+  const [currentScreen, setCurrentScreen] = useState('feedback'); 
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
   const [reviewsAccepted, setReviewsAccepted] = useState([]);
 
@@ -120,7 +120,9 @@ export default function AdminPanel() {
         </div>
         );
       case 'users':
-        return <div className="usersScreen screen">Users Screen Content</div>;
+        return (
+        <div className="usersScreen screen">Users Screen Content</div>
+        )
       case 'doctors':
         return <div className="doctorsScreen screen">Doctors Screen Content</div>;
       case 'newsletter':

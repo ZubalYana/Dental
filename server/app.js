@@ -173,7 +173,6 @@ app.delete('/api/feedbacks/:id', async (req, res) => {
         res.status(500).json({ error: 'Failed to delete feedback' });
     }
 });
-
 //accept feedback
 app.put('/api/feedbacks/:id', async (req, res) => {
     try {
@@ -195,6 +194,18 @@ app.put('/api/feedbacks/:id', async (req, res) => {
         res.status(500).json({ error: 'Failed to accept feedback' });
     }
 });
+
+//get all the users
+app.get('/api/users', async (req, res) => {
+    try {
+        const users = await User.find(); 
+        res.status(200).json(users); 
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ error: 'Failed to fetch users' });
+    }
+});
+
 //basic endpoints
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
