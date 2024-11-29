@@ -11,6 +11,7 @@ import AdminHeader from '../AdminHeader/AdminHeader';
 import axios from 'axios';
 
 export default function AdminPanel() {
+  const [currentScreen, setCurrentScreen] = useState('feedback'); // Default screen
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
   const [reviewsAccepted, setReviewsAccepted] = useState([]);
 
@@ -42,7 +43,7 @@ export default function AdminPanel() {
 
   function handleReject(id) {
     console.log(id)
-    axios.delete(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
+    axios.delete("http://localhost:3000/api/feedbacks/${id}").then(() => {
       const updatedReviews = reviewsToCheck.filter((review) => review._id !== id);
       setReviewsToCheck(updatedReviews);
       alert('Review rejected');
@@ -51,7 +52,7 @@ export default function AdminPanel() {
 
   function handleAccept(id) {
     console.log(id)
-    axios.put(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
+    axios.put("http://localhost:3000/api/feedbacks/${id}").then(() => {
       const updatedReviews = reviewsToCheck.map((review) => {
         if (review._id === id) {
           return { ...review, accepted: true };
@@ -62,12 +63,11 @@ export default function AdminPanel() {
       alert('Review accepted');
     });
   }
-
-  return (
-    <>
-      <div className="wrap adminWrap">
-        <AdminHeader />
-        <div className="feedbackScreen">
+  const renderCurrentScreen = () => {
+    switch (currentScreen) {
+      case 'feedback':
+        return (
+          <div className="feedbackScreen">
           <div className="feedbacksToCheckCon">
             <h2>New reviews to check:</h2>
             <div className="feedbacksToCheck">
@@ -118,7 +118,24 @@ export default function AdminPanel() {
 
           </div>
         </div>
-      </div>
-    </>
+        );
+      case 'users':
+        return <div className="usersScreen screen">Users Screen Content</div>;
+      case 'doctors':
+        return <div className="doctorsScreen screen">Doctors Screen Content</div>;
+      case 'newsletter':
+        return <div className="newsLetterScreen screen">Newsletter Screen Content</div>;
+      case 'appointments':
+        return <div className="appointmentsScreen screen">Appointments Screen Content</div>;
+      default:
+        return <div>404 - Screen Not Found</div>;
+    }
+  };
+
+  return (
+    <div className="wrap adminWrap">
+      <AdminHeader setCurrentScreen={setCurrentScreen} />
+      {renderCurrentScreen()}
+    </div>
   );
 }
