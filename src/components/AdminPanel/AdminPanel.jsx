@@ -137,7 +137,18 @@ export default function AdminPanel() {
         );
       case 'users':
         return (
-        <div className="usersScreen screen">Users Screen Content</div>
+        <div className="usersScreen screen">
+          <h2>Registered users:</h2>
+          <div className="usersCon">
+            {users.map((user) => (
+              <div className="user" key={user._id}>
+                <img src={user.img || defaultUserPic} alt="User" className="userImg" />
+                <div className="userName">{user.name}</div>
+                <div className="userEmail">{user.email}</div>
+              </div>
+            ))}
+          </div>
+        </div>
         )
       case 'doctors':
         return <div className="doctorsScreen screen">Doctors Screen Content</div>;
