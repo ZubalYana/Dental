@@ -106,4 +106,12 @@
     display: flex;
     align-items: center;
 }
+.deleteUser{
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.deleteUser:hover{
+    color: #ff0000;
+}
 /* users */

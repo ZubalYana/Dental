@@ -78,6 +78,16 @@ export default function AdminPanel() {
     });
   }
 
+  //delete a user
+  function handleDelete(id) {
+    console.log(id)
+    axios.delete("http://localhost:3000/api/users/${id}").then(() => {
+      const updatedUsers = users.filter((user) => user._id !== id);
+      setUsers(updatedUsers);
+      alert('User deleted');
+    });
+  }
+
   //screens rendering
   const renderCurrentScreen = () => {
     switch (currentScreen) {
@@ -147,6 +157,7 @@ export default function AdminPanel() {
                   <div className="userName">{user.name}</div>
                 </div>
                 <div className="userEmail">{user.email}</div>
+                <FontAwesomeIcon icon={faTrashCan} className="deleteUser" onClick={() => handleDelete(user._id)} />
               </div>
             ))}
           </div>
