@@ -14,7 +14,9 @@ export default function AdminPanel() {
   const [currentScreen, setCurrentScreen] = useState('feedback'); 
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
   const [reviewsAccepted, setReviewsAccepted] = useState([]);
+  const [users, setUsers] = useState([]);
 
+  //get reviews to check
   useEffect(() => {
     axios.get('http://localhost:3000/api/feedbacks').then((res) => {
       const pendingReviews = res.data.filter((review) => !review.accepted);
@@ -23,6 +25,7 @@ export default function AdminPanel() {
     });
   }, []);
 
+  //get reviews accepted
   useEffect(() => {
     axios.get('http://localhost:3000/api/feedbacks').then((res) => {
       const pendingReviews = res.data.filter((review) => review.accepted);
@@ -31,6 +34,15 @@ export default function AdminPanel() {
     });
   }, []);
 
+  //get users
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/users').then((res) => {
+      setUsers(res.data);
+      console.log(res.data);
+    });
+  }, []);
+
+  //render starts in the reviews
   const renderStars = (rate) => {
     return Array.from({ length: 5 }, (_, index) => (
       <FontAwesomeIcon
@@ -41,6 +53,7 @@ export default function AdminPanel() {
     ));
   };
 
+  //reject/delete a review
   function handleReject(id) {
     console.log(id)
     axios.delete("http://localhost:3000/api/feedbacks/${id}").then(() => {
@@ -50,6 +63,7 @@ export default function AdminPanel() {
     });
   }
 
+  //accept a review
   function handleAccept(id) {
     console.log(id)
     axios.put("http://localhost:3000/api/feedbacks/${id}").then(() => {
@@ -63,6 +77,8 @@ export default function AdminPanel() {
       alert('Review accepted');
     });
   }
+
+  //screens rendering
   const renderCurrentScreen = () => {
     switch (currentScreen) {
       case 'feedback':
