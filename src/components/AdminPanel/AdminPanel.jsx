@@ -142,8 +142,10 @@ export default function AdminPanel() {
           <div className="usersCon">
             {users.map((user) => (
               <div className="user" key={user._id}>
-                <img src={user.img || defaultUserPic} alt="User" className="userImg" />
-                <div className="userName">{user.name}</div>
+                <div className="pictureAndName">
+                  <img src={user.img || defaultUserPic} alt="User" className="userImg" />
+                  <div className="userName">{user.name}</div>
+                </div>
                 <div className="userEmail">{user.email}</div>
               </div>
             ))}
