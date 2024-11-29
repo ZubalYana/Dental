@@ -14,8 +14,19 @@
     display: flex;
     overflow-x: auto;
     margin-top: 20px;
+    margin-bottom: 40px;
+}
+.acceptedReviews{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 .feedbacksToCheck::-webkit-scrollbar{
+    height: 5px !important; 
+}
+.acceptedReviews::-webkit-scrollbar{
     height: 5px !important; 
 }
 .reviewCon{
@@ -39,12 +50,20 @@
     cursor: pointer;
     font-size: 20px;
 }
-#rejectReview{
+.rejectReview{
     border: 2px solid #ff0000;
     color: #ff0000;
 }
-#acceptReview{
+.acceptReview{
     border: 2px solid #20d500;
     color: #20d500;
+}
+.deleteReview{
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 16px;
 }
 /* feedback */

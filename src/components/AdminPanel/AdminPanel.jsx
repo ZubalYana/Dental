@@ -5,18 +5,28 @@ import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';  
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import defaultUserPic from "/default user picture.png";
 import AdminHeader from '../AdminHeader/AdminHeader';
 import axios from 'axios';
 
 export default function AdminPanel() {
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
+  const [reviewsAccepted, setReviewsAccepted] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/feedbacks').then((res) => {
       const pendingReviews = res.data.filter((review) => !review.accepted);
       setReviewsToCheck(pendingReviews);
       console.log(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/feedbacks').then((res) => {
+      const pendingReviews = res.data.filter((review) => review.accepted);
+      setReviewsAccepted(pendingReviews);
+      console.log(pendingReviews);
     });
   }, []);
 
@@ -70,10 +80,10 @@ export default function AdminPanel() {
                       className="reviewerImg" 
                     />
                     <div className="reviewActions">
-                      <div id="rejectReview" className='reviewAction' onClick={() => handleReject(_id)}>
+                      <div className='reviewAction rejectReview' onClick={() => handleReject(_id)}>
                         <FontAwesomeIcon icon={faXmark} />
                       </div>
-                      <div id="acceptReview" className='reviewAction' onClick={() => handleAccept(_id)}>
+                      <div className='reviewAction acceptReview' onClick={() => handleAccept(_id)}>
                         <FontAwesomeIcon icon={faCheck} />
                       </div>
                     </div>
@@ -84,6 +94,28 @@ export default function AdminPanel() {
                 </div>
               ))}
             </div>
+
+            <h2>Accepted reviews:</h2>
+            <div className="acceptedReviews">
+              {reviewsAccepted.map(({ _id, name, img, feedback, rating }) => (
+                <div className="reviewCon" key={_id}>
+                  <div className="review">
+                    <img 
+                      src={img || defaultUserPic}
+                      alt="Reviewer" 
+                      className="reviewerImg" 
+                    />
+                      <div className='reviewAction deleteReview' onClick={() => handleReject(_id)}>
+                        <FontAwesomeIcon icon={faTrashCan} />
+                      </div>
+                    <div className="reviewerName">{name}</div>
+                    <div className="reviewerText">{feedback}</div>
+                    <div className="stars">{renderStars(rating)}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
