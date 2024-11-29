@@ -56,7 +56,7 @@ export default function AdminPanel() {
   //reject/delete a review
   function handleReject(id) {
     console.log(id)
-    axios.delete("http://localhost:3000/api/feedbacks/${id}").then(() => {
+    axios.delete(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
       const updatedReviews = reviewsToCheck.filter((review) => review._id !== id);
       setReviewsToCheck(updatedReviews);
       alert('Review rejected');
@@ -66,7 +66,7 @@ export default function AdminPanel() {
   //accept a review
   function handleAccept(id) {
     console.log(id)
-    axios.put("http://localhost:3000/api/feedbacks/${id}").then(() => {
+    axios.put(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
       const updatedReviews = reviewsToCheck.map((review) => {
         if (review._id === id) {
           return { ...review, accepted: true };
@@ -81,7 +81,7 @@ export default function AdminPanel() {
   //delete a user
   function handleDelete(id) {
     console.log(id)
-    axios.delete("http://localhost:3000/api/users/${id}").then(() => {
+    axios.delete(`http://localhost:3000/api/users/${id}`).then(() => {
       const updatedUsers = users.filter((user) => user._id !== id);
       setUsers(updatedUsers);
       alert('User deleted');
