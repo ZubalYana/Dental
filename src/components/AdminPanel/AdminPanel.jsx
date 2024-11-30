@@ -176,7 +176,7 @@ export default function AdminPanel() {
 
   return (
     <div className="wrap adminWrap">
-      <AdminHeader setCurrentScreen={setCurrentScreen} />
+      <AdminHeader setCurrentScreen={setCurrentScreen} /> 
       {renderCurrentScreen()}
     </div>
   );
