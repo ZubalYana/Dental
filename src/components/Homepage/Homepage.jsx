@@ -5,7 +5,6 @@ import AuthForm from '../AuthForm/AuthForm';
 import Header from '../Header/Header';
 import ServicesCard from '../servicesCard/servicesCard';
 import DoctorCard from '../doctorCard/doctorCard';
-import Review from '../Review/Review';
 import MailForm from '../MailForm/MailForm';
 import aboutUsImg from '/about us screen img.png';
 import teethSvg from '../../assets/teeth.svg';
@@ -288,7 +287,6 @@ function Homepage() {
           <Feedback />
         </div>
       </div>
-
 
       {/* Contact Form */}
       <div className="newsLetter">
