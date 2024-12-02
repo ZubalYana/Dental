@@ -2,8 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminHeader from '../AdminHeader/AdminHeader';
 import FeedbackScreen from '../FeedbackScreen/FeedbackScreen';
-
-const UsersScreen = () => <div>Users Screen Content</div>;
+import UsersScreen from '../UsersScreen/UsersScreen';
 const DoctorsScreen = () => <div>Doctors Screen Content</div>;
 const NewsletterScreen = () => <div>Newsletter Screen Content</div>;
 const AppointmentsScreen = () => <div>Appointments Screen Content</div>;
@@ -14,7 +13,7 @@ export default function AdminPanel() {
       <AdminHeader />
       <div style={{ flex: 1, padding: '20px' }}>
         <Routes>
-          <Route path="/" element={<Navigate to="/admin/feedback" />} />
+          <Route path="/" element={<Navigate to="feedback" />} />
           <Route path="feedback" element={<FeedbackScreen />} />
           <Route path="users" element={<UsersScreen />} />
           <Route path="doctors" element={<DoctorsScreen />} />
