@@ -5,12 +5,14 @@ import logoSvg from '../../assets/logo.svg';
 
 export default function AdminHeader() {
   const menuItems = [
-    { name: 'Feedback', path: '/feedback' },
-    { name: 'Users', path: '/users' },
-    { name: 'Doctors', path: '/doctors' },
-    { name: 'Newsletter', path: '/newsletter' },
-    { name: 'Appointments', path: '/appointments' },
+    { name: 'Feedback', path: '/admin/feedback' },
+    { name: 'Users', path: '/admin/users' },
+    { name: 'Doctors', path: '/admin/doctors' },
+    { name: 'Newsletter', path: '/admin/newsletter' },
+    { name: 'Appointments', path: '/admin/appointments' },
   ];
+  
+  
 
   return (
     <header className="adminHeader">
@@ -21,15 +23,16 @@ export default function AdminHeader() {
       <ul className="nav">
         {menuItems.map((item, index) => (
           <li key={index} className="nav_item">
-            <NavLink
-              to={item.path}
-              style={({ isActive }) => ({
-                textDecoration: 'none',
-                color: isActive ? 'blue' : 'black',
-              })}
-            >
-              {item.name}
-            </NavLink>
+<NavLink
+  to={item.path}
+  style={({ isActive }) => ({
+    textDecoration: 'none',
+    color: isActive ? 'blue' : 'black',
+  })}
+>
+  {item.name}
+</NavLink>
+
             <div className="animatedLine"></div>
           </li>
         ))}

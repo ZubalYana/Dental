@@ -12,15 +12,18 @@ export default function AdminPanel() {
     <div className="wrap adminWrap">
       <AdminHeader />
       <div style={{ flex: 1, padding: '20px' }}>
-        <Routes>
-          <Route path="/" element={<Navigate to="feedback" />} />
-          <Route path="feedback" element={<FeedbackScreen />} />
-          <Route path="users" element={<UsersScreen />} />
-          <Route path="doctors" element={<DoctorsScreen />} />
-          <Route path="newsletter" element={<NewsletterScreen />} />
-          <Route path="appointments" element={<AppointmentsScreen />} />
-          <Route path="*" element={<div>404 - Admin Screen Not Found</div>} />
-        </Routes>
+      <FeedbackScreen />
+      <UsersScreen />
+      <Routes>
+  <Route path="/admin" element={<Navigate to="/admin/feedback" />} />
+  <Route path="/admin/feedback" element={<FeedbackScreen />} />
+  <Route path="/admin/users" element={<UsersScreen />} />
+  <Route path="/admin/doctors" element={<DoctorsScreen />} />
+  <Route path="/admin/newsletter" element={<NewsletterScreen />} />
+  <Route path="/admin/appointments" element={<AppointmentsScreen />} />
+  <Route path="*" element={<div>404 - Admin Screen Not Found</div>} />
+</Routes>
+
       </div>
     </div>
   );

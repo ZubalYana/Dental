@@ -1,5 +1,9 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import defaultUserPic from '/default user picture.png';
+import axios from 'axios';
+import "./UsersScreen.css"
 export default function UsersScreen() {
     const [users, setUsers] = useState([]);
     
