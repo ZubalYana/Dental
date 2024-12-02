@@ -1,8 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './AdminHeader.css';
 import logoSvg from '../../assets/logo.svg';
 
-export default function AdminHeader({ setCurrentScreen }) {
+export default function AdminHeader() {
+  const menuItems = [
+    { name: 'Feedback', path: '/feedback' },
+    { name: 'Users', path: '/users' },
+    { name: 'Doctors', path: '/doctors' },
+    { name: 'Newsletter', path: '/newsletter' },
+    { name: 'Appointments', path: '/appointments' },
+  ];
+
   return (
     <header className="adminHeader">
       <div className="logo">
@@ -10,41 +19,20 @@ export default function AdminHeader({ setCurrentScreen }) {
         Dental Admin
       </div>
       <ul className="nav">
-        <li
-          className="nav_item"
-          id="feedback_li"
-          onClick={() => setCurrentScreen('feedback')}
-        >
-          Feedback<div className="animatedLine"></div>
-        </li>
-        <li
-          className="nav_item"
-          id="users_li"
-          onClick={() => setCurrentScreen('users')}
-        >
-          Users<div className="animatedLine"></div>
-        </li>
-        <li
-          className="nav_item"
-          id="doctors_li"
-          onClick={() => setCurrentScreen('doctors')}
-        >
-          Doctors<div className="animatedLine"></div>
-        </li>
-        <li
-          className="nav_item"
-          id="newsletter_li"
-          onClick={() => setCurrentScreen('newsletter')}
-        >
-          NewsLetter<div className="animatedLine"></div>
-        </li>
-        <li
-          className="nav_item"
-          id="appointments_li"
-          onClick={() => setCurrentScreen('appointments')}
-        >
-          Appointments<div className="animatedLine"></div>
-        </li>
+        {menuItems.map((item, index) => (
+          <li key={index} className="nav_item">
+            <NavLink
+              to={item.path}
+              style={({ isActive }) => ({
+                textDecoration: 'none',
+                color: isActive ? 'blue' : 'black',
+              })}
+            >
+              {item.name}
+            </NavLink>
+            <div className="animatedLine"></div>
+          </li>
+        ))}
       </ul>
     </header>
   );
