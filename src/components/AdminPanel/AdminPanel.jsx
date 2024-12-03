@@ -3,9 +3,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminHeader from '../AdminHeader/AdminHeader';
 import FeedbackScreen from '../FeedbackScreen/FeedbackScreen';
 import UsersScreen from '../UsersScreen/UsersScreen';
+import NewsletterScreen from '../NewsletterScreen/NewsletterScreen';
 
 const DoctorsScreen = () => <div>Doctors Screen Content</div>;
-const NewsletterScreen = () => <div>Newsletter Screen Content</div>;
 const AppointmentsScreen = () => <div>Appointments Screen Content</div>;
 
 export default function AdminPanel() {
