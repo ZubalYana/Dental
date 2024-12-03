@@ -12,7 +12,7 @@ export default function AdminPanel() {
   return (
     <div className="wrap adminWrap">
       <AdminHeader />
-      <div style={{ flex: 1, padding: '20px' }}>
+      <div style={{ flex: 1, padding: '20px 200px' }}>
         <Routes>
           <Route path="/" element={<Navigate to="/admin/feedback" />} />
           <Route path="/feedback" element={<FeedbackScreen />} />
