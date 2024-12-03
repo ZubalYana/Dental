@@ -27,7 +27,7 @@ export default function AdminHeader() {
   to={item.path}
   style={({ isActive }) => ({
     textDecoration: 'none',
-    color: isActive ? 'blue' : 'black',
+    color: isActive ? '#0098FF' : 'black',
   })}
 >
   {item.name}
