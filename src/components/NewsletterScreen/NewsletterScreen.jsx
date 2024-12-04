@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
+import './NewsletterScreen.css';
 
 function NewsletterScreen() {
 
@@ -21,8 +22,8 @@ function NewsletterScreen() {
 
   return (
     <div>
-      <h1>Create Your Newsletter</h1>
-      {/* <div id="editor"></div> */}
+      <h2>Create Your Newsletter</h2>
+      <textarea id="newsLetterText" placeholder='Compose an epic...'></textarea>
       <button >Save Newsletter</button>
     </div>
   );
