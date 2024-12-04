@@ -1,30 +1,46 @@
-import React, { useEffect } from 'react';
-import Quill from 'quill';
-import 'quill/dist/quill.snow.css';
+import React, { useState } from 'react';
 import './NewsletterScreen.css';
 
 function NewsletterScreen() {
+  const [newsletterText, setNewsletterText] = useState('');
 
-  // useEffect(() => {
-  //   const quill = new Quill('#editor', {
-  //     modules: {
-  //       toolbar: [
-  //         [{ header: [1, 2, false] }],
-  //         ['bold', 'italic', 'underline'],
-  //         ['image', 'code-block'],
-  //       ],
-  //     },
-  //     placeholder: 'Compose an epic...',
-  //     theme: 'snow', // or 'bubble'
-  //   });
-  // }, []);
+  const handleSaveNewsletter = async () => {
+    if (!newsletterText.trim()) {
+      alert('Please compose a newsletter before saving.');
+      return;
+    }
 
+    try {
+      const response = await fetch('/api/sendNewsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: newsletterText }),
+      });
+
+      if (response.ok) {
+        alert('Newsletter sent successfully!');
+        setNewsletterText('');
+      } else {
+        alert('Failed to send the newsletter.');
+      }
+    } catch (error) {
+      console.error('Error sending newsletter:', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
 
   return (
     <div>
       <h2>Create Your Newsletter</h2>
-      <textarea id="newsLetterText" placeholder='Compose an epic...'></textarea>
-      <button >Save Newsletter</button>
+      <textarea
+        id="newsLetterText"
+        placeholder="Compose an epic..."
+        value={newsletterText}
+        onChange={(e) => setNewsletterText(e.target.value)}
+      ></textarea>
+      <button className="saveNewsletter" onClick={handleSaveNewsletter}>
+        Save Newsletter
+      </button>
     </div>
   );
 }

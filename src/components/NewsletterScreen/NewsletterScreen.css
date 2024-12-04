@@ -6,7 +6,25 @@
     padding: 15px;
     resize: none;
     border-radius: 20px;
-    font-size: 24px;
-    font-weight: 300;
     margin-top: 20px;
+}
+.saveNewsletter{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #49B3FB;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;    
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+.saveNewsletter:hover{
+    background-color: #fff;
+    color: #49B3FB;
+    box-shadow: 0px 0px 10px #49B3FB;
 }
