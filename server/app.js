@@ -8,6 +8,8 @@ const jwt = require('jsonwebtoken');
 const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+const router = express.Router();
+
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
     console.log('DB connected')
@@ -40,17 +42,7 @@ const Feedback = mongoose.model('Feedback', {
     accepted: { type: Boolean, default: false },
 })
 
-//newsLetter sending
-app.post('/send', (req, res) => {
-    const { email } = req.body
-    console.log(email)
-    res.send('ok')
 
-    const newEmail = new Email({
-        email
-    })
-    newEmail.save()
-})
 
 //auth
 app.post('/register', async (req, res) => {
@@ -96,39 +88,50 @@ app.post('/login', async (req, res) => {
 
 //nodemailer
 const transporter = nodemailer.createTransport({
-    service: 'gmail', 
+    service: 'gmail',
     auth: {
-        user: 'yanazubal2345@gmail.com',
-        pass: 'ioil iqsl jwbr skqn'
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+});
+app.post('/api/send-newsletter', async (req, res) => {
+    const { content } = req.body;
+    if (!content || !content.trim()) {
+      return res.status(400).json({ error: 'Newsletter content is required.' });
+    }
+    try {
+      const emails = await Email.find({});
+      if (!emails.length) {
+        return res.status(404).json({ error: 'No subscribers found.' });
+      }
+  
+      const promises = emails.map((emailDoc) => {
+        const mailOptions = {
+          from: process.env.EMAIL_USER,
+          to: emailDoc.email,
+          subject: 'Your Newsletter',
+          html: content,
+        };
+        return transporter.sendMail(mailOptions);
+      });
+      await Promise.all(promises);
+      res.status(200).json({ message: 'Newsletter sent successfully to all subscribers.' });
+    } catch (error) {
+      console.error('Error sending newsletter:', error);
+      res.status(500).json({ error: 'An internal server error occurred.' });
     }
 });
 //newsLetter sending
-app.post('/send-newsletter', async (req, res) => {
-    const { content } = req.body;
-    if (!content) {
-        return res.status(400).send('Content is required');
-    }
-    try {
-        const subscribers = await Subscriber.find({});
-        if (!subscribers.length) {
-            return res.status(404).send('No subscribers found');
-        }
-        for (const subscriber of subscribers) {
-            const mailOptions = {
-                from: 'yanazubal2345@gmail.com', 
-                to: subscriber.email, 
-                subject: 'Your Newsletter',
-                html: content 
-            };
-            await transporter.sendMail(mailOptions);
-            console.log(`Newsletter sent to ${subscriber.email}`);
-        }
-        res.status(200).send('Newsletter sent successfully to all subscribers');
-    } catch (error) {
-        console.error('Error sending newsletter:', error);
-        res.status(500).send('Error sending newsletter');
-    }
-});
+app.post('/send', (req, res) => {
+    const { email } = req.body
+    console.log(email)
+    res.send('ok')
+
+    const newEmail = new Email({
+        email
+    })
+    newEmail.save()
+})
 
 //feedback sending
 app.post('/feedback', (req, res) => {
