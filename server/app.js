@@ -5,9 +5,11 @@ const PORT = 3000;
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
+// const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+dotenv.config();
 const router = express.Router();
 
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
@@ -95,12 +97,17 @@ const transporter = nodemailer.createTransport({
     },
 });
 app.post('/api/send-newsletter', async (req, res) => {
+    console.log('Request body:', req.body);
+  
     const { content } = req.body;
     if (!content || !content.trim()) {
       return res.status(400).json({ error: 'Newsletter content is required.' });
     }
+  
     try {
       const emails = await Email.find({});
+      console.log('Emails:', emails);
+  
       if (!emails.length) {
         return res.status(404).json({ error: 'No subscribers found.' });
       }
@@ -114,6 +121,7 @@ app.post('/api/send-newsletter', async (req, res) => {
         };
         return transporter.sendMail(mailOptions);
       });
+  
       await Promise.all(promises);
       res.status(200).json({ message: 'Newsletter sent successfully to all subscribers.' });
     } catch (error) {

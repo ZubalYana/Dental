@@ -14,23 +14,25 @@ function NewsletterScreen() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/send-newsletter', {
+      const response = await fetch('http://localhost:3000/api/send-newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: newsletterText }),
       });
-
-      const data = await response.json();
-      if (response.ok) {
-        alert('Newsletter sent successfully!');
-        setNewsletterText('');
-      } else {
-        alert(`Failed to send the newsletter: ${data.error || 'Unknown error'}`);
+      
+    
+      if (!response.ok) {
+        const errorText = await response.text();
+        alert(`Failed to send the newsletter: ${errorText}`);
+        return;
       }
-    } catch (error) {
+    
+      const data = await response.json();
+      alert('Newsletter sent successfully!');
+    }catch (error) {
       console.error('Error sending newsletter:', error);
       alert('An error occurred while sending the newsletter. Please try again.');
-    } finally {
+    }finally {
       setLoading(false);
     }
   };
