@@ -29,6 +29,8 @@ function NewsletterScreen() {
     
       const data = await response.json();
       alert('Newsletter sent successfully!');
+    
+      setNewsletterText('');
     }catch (error) {
       console.error('Error sending newsletter:', error);
       alert('An error occurred while sending the newsletter. Please try again.');
