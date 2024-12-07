@@ -15,15 +15,17 @@ export default function UsersScreen() {
       }, []);
 
       function handleDelete(id) {
-        console.log(id)
-        axios.delete("http://localhost:3000/api/users/${id}").then(() => {
+        console.log(id);
         axios.delete(`http://localhost:3000/api/users/${id}`).then(() => {
           const updatedUsers = users.filter((user) => user._id !== id);
           setUsers(updatedUsers);
           alert('User deleted');
+        }).catch((error) => {
+          console.error("Error deleting user:", error);
+          alert('Failed to delete user. Please try again.');
         });
-      });
-    }
+      }
+      
 
     return (
         <div className="usersScreen screen">
