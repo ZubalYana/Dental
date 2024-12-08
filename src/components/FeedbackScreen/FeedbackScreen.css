@@ -1,0 +1,61 @@
+.feedbackScreen{
+    width: 100%;
+    min-height: 90vh;
+}
+.feedbacksToCheck{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.acceptedReviews{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.feedbacksToCheck::-webkit-scrollbar{
+    height: 5px !important; 
+}
+.acceptedReviews::-webkit-scrollbar{
+    height: 5px !important; 
+}
+.reviewCon{
+    margin-right: 30px;
+}
+.reviewActions{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 5px;
+    padding: 15px;
+}
+.reviewAction{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+.rejectReview{
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+.acceptReview{
+    border: 2px solid #20d500;
+    color: #20d500;
+}
+.deleteReview{
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 16px;
+}

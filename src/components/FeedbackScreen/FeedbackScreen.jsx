@@ -6,6 +6,8 @@ import { faXmark, faCheck, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import defaultUserPic from '/default user picture.png';
 import axios from 'axios';
 
+import './FeedbackScreen.css';
+
 export default function FeedbackScreen() {
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
   const [reviewsAccepted, setReviewsAccepted] = useState([]);
