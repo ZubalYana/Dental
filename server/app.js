@@ -5,7 +5,6 @@ const PORT = 3000;
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// const SECRET_KEY = process.env.SECRET_KEY || 'your-secret-key';
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');

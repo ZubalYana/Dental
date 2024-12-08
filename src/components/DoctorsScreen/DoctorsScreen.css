@@ -1,0 +1,36 @@
+.doctorInfo{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+.nameAndSpecialityCon{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.nameAndSpecialityCon input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+#doctorImage{
+    width: 200px;
+    height: 200px;
+}
+.registerDoctor{
+    width: 200px;
+    height: 60px;
+    background-color: #0098FF;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.registerDoctor:hover{
+    background-color: #fff;
+    color: #0098FF;
+    border: #0098FF 1px solid;
+}
