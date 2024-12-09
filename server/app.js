@@ -262,7 +262,17 @@ app.post('/api/registerDoctor', async (req, res) => {
       console.error('Error registering doctor:', error);
       res.status(500).json({ error: 'Failed to register doctor' });
     }
-  });
+});
+//get all the doctors
+app.get('/api/doctors', async (req, res) => {
+    try {
+        const doctors = await Doctor.find(); 
+        res.status(200).json(doctors); 
+    } catch (error) {
+        console.error('Error fetching doctors:', error);
+        res.status(500).json({ error: 'Failed to fetch doctors' });
+    }
+});
 
 //basic endpoints
 app.get('/', (req, res) => {
