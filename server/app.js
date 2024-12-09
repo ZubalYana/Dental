@@ -10,6 +10,7 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
 const router = express.Router();
+const multer = require('multer');
 
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
@@ -23,7 +24,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
-
+//multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+      cb(null, `${Date.now()}-${file.originalname}`);
+    },
+});
+const upload = multer({ storage });
 
 //mongoose schemas
 const emailSchema = new mongoose.Schema({
@@ -42,7 +52,12 @@ const Feedback = mongoose.model('Feedback', {
     rating: Number,
     accepted: { type: Boolean, default: false },
 })
-
+const doctorSchema = new mongoose.Schema({
+    name: String,
+    image: String,
+    specialty: String
+})
+const Doctor = mongoose.model('Doctor', doctorSchema)
 
 
 //auth
@@ -232,6 +247,22 @@ app.delete('/api/users/:id', async (req, res) => {
         res.status(500).json({ error: 'Failed to delete user' });
     }
 });
+
+//register a doctor
+app.post('/api/registerDoctor', async (req, res) => {
+    try {
+      const { name, specialty, image } = req.body;
+      if (!name || !specialty || !image) {
+        return res.status(400).json({ error: 'All fields are required' });
+      }
+      const doctor = new Doctor({ name, specialty, image });
+      await doctor.save();
+      res.status(200).json({ message: 'Doctor registered successfully' });
+    } catch (error) {
+      console.error('Error registering doctor:', error);
+      res.status(500).json({ error: 'Failed to register doctor' });
+    }
+  });
 
 //basic endpoints
 app.get('/', (req, res) => {
