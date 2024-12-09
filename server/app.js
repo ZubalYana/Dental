@@ -59,7 +59,6 @@ const doctorSchema = new mongoose.Schema({
 })
 const Doctor = mongoose.model('Doctor', doctorSchema)
 
-
 //auth
 app.post('/register', async (req, res) => {
     const { name, email, password } = req.body;

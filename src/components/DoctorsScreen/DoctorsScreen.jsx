@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './DoctorsScreen.css';
 import axios from 'axios';
-import DoctorCard from '../doctorCard/DoctorCard'; // Assuming DoctorCard is a React component
+import DoctorCard from '../doctorCard/DoctorCard'; 
 
 export default function DoctorsScreen() {
   const [doctors, setDoctors] = useState([]);
@@ -77,9 +77,10 @@ export default function DoctorsScreen() {
 
       <h2>Doctors:</h2>
       <div className="doctorsList">
-        {doctors.map((doctor) => (
-          <DoctorCard key={doctor.id} doctor={doctor} />
-        ))}
+      {doctors.map((doctor) => (
+        <DoctorCard key={doctor._id} doctor={doctor} />
+      ))}
+
       </div>
     </>
   );
