@@ -4,6 +4,7 @@ export default function DoctorsScreen() {
   return (
     <>
         <h2>Register a new doctor:</h2>
+        <div className="doctorForm">
         <div className="doctorInfo">
           <input type="file" placeholder='Doctor image' id='doctorImage' />
           <div className="nameAndSpecialityCon">
@@ -11,9 +12,10 @@ export default function DoctorsScreen() {
             <input type="text" placeholder='Specialty' id='doctorSpecialty' />
 
           </div>
-          <button className='registerDoctor'>Register</button>
-
         </div>
+          <button className='registerDoctor'>Register</button>
+        </div>
+        
     </>
   )
 }

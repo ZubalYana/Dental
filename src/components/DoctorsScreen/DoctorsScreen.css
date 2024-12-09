@@ -28,9 +28,10 @@
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 .registerDoctor:hover{
     background-color: #fff;
     color: #0098FF;
-    border: #0098FF 1px solid;
+    box-shadow: 0px 0px 10px #0098FF;
 }
