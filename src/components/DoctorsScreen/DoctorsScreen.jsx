@@ -83,7 +83,7 @@ export default function DoctorsScreen() {
       <h2>Doctors:</h2>
       <div className="doctorsList">
       {doctors.map((doctor) => (
-        <DoctorCard key={doctor._id} img={doctor.image} name={doctor.name} position={doctor.specialty} />
+        <DoctorCard key={doctor._id} img={doctor.image} name={doctor.name} position={doctor.specialty} className="adminDoctorCard" />
       ))}
       </div>
     </>
