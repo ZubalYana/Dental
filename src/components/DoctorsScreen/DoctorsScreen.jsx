@@ -55,6 +55,11 @@ export default function DoctorsScreen() {
     }
   };
 
+  // Log whenever doctors state updates
+  useEffect(() => {
+    console.log('Updated doctors:', doctors);
+  }, [doctors]);
+
   useEffect(() => {
     fetchDoctors();
   }, []); 
@@ -80,7 +85,6 @@ export default function DoctorsScreen() {
       {doctors.map((doctor) => (
         <DoctorCard key={doctor._id} doctor={doctor} />
       ))}
-
       </div>
     </>
   );
