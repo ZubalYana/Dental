@@ -11,6 +11,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const router = express.Router();
 const multer = require('multer');
+const bodyParser = require('body-parser');
 
 mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 //multer
 const storage = multer.diskStorage({
