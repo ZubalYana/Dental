@@ -61,6 +61,16 @@ const doctorSchema = new mongoose.Schema({
     specialty: String
 })
 const Doctor = mongoose.model('Doctor', doctorSchema)
+const appointmentSchema = new mongoose.Schema({
+    name: String,
+    gender: String,
+    phone: String,
+    email: String,
+    department: String,
+    date: Date,
+    details: String,
+  });
+const Appointment = mongoose.model('Appointment', appointmentSchema);
 
 //auth
 app.post('/register', async (req, res) => {
@@ -275,6 +285,17 @@ app.get('/api/doctors', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch doctors' });
     }
 });
+
+//create an appointment
+app.post('/api/appointments', async (req, res) => {
+    try {
+      const appointment = new Appointment(req.body);
+      await appointment.save();
+      res.status(201).send('Appointment saved successfully');
+    } catch (error) {
+      res.status(500).send('Error saving appointment');
+    }
+  });
 
 //basic endpoints
 app.get('/', (req, res) => {
