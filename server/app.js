@@ -295,7 +295,32 @@ app.post('/api/appointments', async (req, res) => {
     } catch (error) {
       res.status(500).send('Error saving appointment');
     }
-  });
+});
+app.get('/api/appointments', async (req, res) => {
+    try {
+        const appointments = await Appointment.find(); 
+        res.status(200).json(appointments); 
+    } catch (error) {
+        console.error('Error fetching appointments:', error);
+        res.status(500).json({ error: 'Failed to fetch appointments' });
+    }
+});
+app.delete('/api/appointments/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({ error: 'Invalid ID format' });
+        }
+        const result = await Appointment.deleteOne({ _id: id });
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: 'Appointment not found' });
+        }
+        res.status(200).json({ message: 'Appointment deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting appointment:', error);
+        res.status(500).json({ error: 'Failed to delete appointment' });
+    }
+});
 
 //basic endpoints
 app.get('/', (req, res) => {
