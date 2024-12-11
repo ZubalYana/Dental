@@ -5,7 +5,7 @@ import FeedbackScreen from '../FeedbackScreen/FeedbackScreen';
 import UsersScreen from '../UsersScreen/UsersScreen';
 import NewsletterScreen from '../NewsletterScreen/NewsletterScreen';
 import DoctorsScreen from '../DoctorsScreen/DoctorsScreen';
-const AppointmentsScreen = () => <div>Appointments Screen Content</div>;
+import AppointmentsScreen from '../AppointmentsScreen/AppointmentsScreen';
 
 export default function AdminPanel() {
   return (
