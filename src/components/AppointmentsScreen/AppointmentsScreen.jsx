@@ -22,14 +22,13 @@ export default function AppointmentsScreen() {
         <div className="appointmentsCon">
             {appointments.map((appointment) => (
                 <div className="appointment" key={appointment._id}>
-                    <h3>{appointment.name}</h3>
-                    <p>Gender: {appointment.gender}</p>
-                    <p>Age: {appointment.age}</p>
-                    <p>Phone: {appointment.phone}</p>
-                    <p>Email: {appointment.email}</p>
-                    <p>Department: {appointment.department}</p>
-                    <p>Date: {appointment.date}</p>
-                    <p>Details: {appointment.details}</p>
+                    <h3 className='appintmentName'>{appointment.name}</h3>
+                    <p className='appointmentInfo'>Gender: <span className='info'>{appointment.gender}</span></p>
+                    <p className='appointmentInfo'>Phone: <span className='info'>{appointment.phone}</span></p>
+                    <p className='appointmentInfo'>Email: <span className='info'>{appointment.email}</span></p>
+                    <p className='appointmentInfo'>Department: <span className='info'>{appointment.department}</span></p>
+                    <p className='appointmentInfo'>Date: <span className='info'>{appointment.date}</span></p>
+                    <p className='appointmentInfo'>Details: <span className='info'>{appointment.details}</span></p>
                 </div>
             ))}
         </div>

@@ -1,0 +1,26 @@
+.appointmentsCon{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+.appointment{
+    width: 300px;
+    height: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+}
+.appintmentName{
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+.appointmentInfo{
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 6px;
+}
+.info{
+    font-weight: 400;
+}
