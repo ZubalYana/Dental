@@ -21,7 +21,7 @@ export default function AppointmentForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/appointments', formData);
+      const response = await axios.post('http://localhost:3000/api/appointments', formData);
       alert('Appointment created successfully!');
     } catch (error) {
       console.error(error);
