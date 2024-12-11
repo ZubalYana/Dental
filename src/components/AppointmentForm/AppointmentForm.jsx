@@ -23,6 +23,15 @@ export default function AppointmentForm() {
     try {
       const response = await axios.post('http://localhost:3000/api/appointments', formData);
       alert('Appointment created successfully!');
+      setFormData({
+        name: '',
+        gender: 'male',
+        phone: '',
+        email: '',
+        department: '',
+        date: '',
+        details: '',
+      });
     } catch (error) {
       console.error(error);
       alert('Error submitting the form');

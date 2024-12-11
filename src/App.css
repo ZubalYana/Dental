@@ -468,6 +468,9 @@ form input, select, textarea{
   background-color: #ffffff00;
   padding-right: 30px;
 }
+.inputContainer input{
+  height: 60px !important;
+}
 .inputContainer input::placeholder, select, option, textarea::placeholder{
   font-size: 13px;
   font-weight: 400;
