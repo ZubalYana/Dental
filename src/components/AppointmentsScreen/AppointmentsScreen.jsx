@@ -15,6 +15,15 @@ export default function AppointmentsScreen() {
         getAppointments();
     }, []);
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+      };
+
 
   return (
     <div>
@@ -27,7 +36,7 @@ export default function AppointmentsScreen() {
                     <p className='appointmentInfo'>Phone: <span className='info'>{appointment.phone}</span></p>
                     <p className='appointmentInfo'>Email: <span className='info'>{appointment.email}</span></p>
                     <p className='appointmentInfo'>Department: <span className='info'>{appointment.department}</span></p>
-                    <p className='appointmentInfo'>Date: <span className='info'>{appointment.date}</span></p>
+                    <p className='appointmentInfo'>Date: <span className='info'>{formatDate(appointment.date)}</span></p>
                     <p className='appointmentInfo'>Details: <span className='info'>{appointment.details}</span></p>
                 </div>
             ))}
