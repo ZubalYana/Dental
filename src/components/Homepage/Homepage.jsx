@@ -16,12 +16,12 @@ import doctor1 from '/doctor 1.png';
 import doctor2 from '/doctor 2.png';
 import doctor3 from '/doctor 3.png';
 import stepsImg from '/easy steps img.png';
-import makeAnAppointmentImg from '/make an appointment img.png';
 import Feedback from '../Feedback/Feedback'
 import mainScreenImg from '/main screen img.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faXmark } from '@fortawesome/free-solid-svg-icons';
 import ReviewsSlider from '../ReviewsSlider/ReviewsSlider';
+import AppointmentForm from '../AppointmentForm/AppointmentForm';
 function Homepage() {
   // State for video popup, form, and scrolling
   const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
@@ -51,13 +51,11 @@ function Homepage() {
   // Open and close video popup
   const openVideoPopup = () => setVideoPopupOpen(true);
   const closeVideoPopup = () => setVideoPopupOpen(false);
-
   useEffect(() => {
     axios.get('http://localhost:3000/api/feedbacks').then(res => { 
       setFeedbacks(res.data)
     })
   }, [])
-
   console.log(feedbacks)
 
   return (
@@ -235,38 +233,13 @@ function Homepage() {
       </div>
 
       {/* Make An Appointment */}
-      <div className="makeAnAppointmentScreen" ref={makeAnAppointmentRef} id="makeAnAppointmentScreen">
-          <div className="title">Make An Appointment</div>
-          <div className="subtitle">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.</div>
-          <div className="makeAnAppointment_con">
-            <form action="submit">
-              <h4>Appointment</h4>
-              <div className="inputContainer">
-                <input type="text" placeholder="Patient Name" id='name' />
-                <select name="gender" id="gender" placeholder="Gender">
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div className="inputContainer">
-              <input type="text" placeholder="Phone number" id='phone' />
-              <input type="text" placeholder="Email" id='appointmentEmail' />
-              </div>
-              <div className="inputContainer">
-              <select name="department" id="department">
-                <option value="department">Department 1</option>
-                <option value="department">Department 2</option>
-                <option value="department">Department 3</option>
-              </select>
-              <input type="date" id="date" placeholder="Date" />
-              </div>
-              <textarea name="details" id="details" placeholder='More details'></textarea>
-              <button type="submit">Send Massage</button>
-            </form>
-            <img src={makeAnAppointmentImg} alt="makeAnAppointmentImg" className='makeAnAppointmentImg' />
-          </div>
-        </div>
+      <div className="makeAnAppointmentScreen" id="makeAnAppointmentScreen">
+      <div className="title">Make An Appointment</div>
+      <div className="subtitle">
+        Dental or oral health is concerned with your teeth, gums and mouth. healthy mouth free of infections, injuries and other problems with.
+      </div>
+      <AppointmentForm />
+    </div>
 
       {/* Reviews */}
       <div className="reviewScreen">
