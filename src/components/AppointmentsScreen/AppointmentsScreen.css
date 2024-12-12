@@ -1,8 +1,13 @@
 .appointmentsCon{
     width: 100%;
+    height: 370px;
     display: flex;
     margin-top: 20px;
     overflow-x: auto;
+    padding-left: 10px;
+}
+.appointmentsCon::-webkit-scrollbar{
+    height: 5px !important; 
 }
 .appointment{
     width: 370px;
