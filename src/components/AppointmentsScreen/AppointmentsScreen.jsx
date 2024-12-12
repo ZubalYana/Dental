@@ -22,7 +22,18 @@ export default function AppointmentsScreen() {
           month: 'long',
           day: 'numeric',
         });
-      };
+    };
+
+    function handleArchive(id) {
+        axios.delete(`http://localhost:3000/api/appointments/${id}`).then(() => {
+          const updatedAppointments = appointments.filter((appointment) => appointment._id !== id);
+          setAppointments(updatedAppointments);
+          alert('Appointment deleted');
+        }).catch((error) => {
+          console.error("Error deleting appointment:", error);
+          alert('Failed to delete appointment. Please try again.');
+        });
+      }
 
 
   return (
@@ -38,7 +49,7 @@ export default function AppointmentsScreen() {
                     <p className='appointmentInfo'>Department: <span className='info'>{appointment.department}</span></p>
                     <p className='appointmentInfo'>Date: <span className='info'>{formatDate(appointment.date)}</span></p>
                     <p className='appointmentInfo'>Details: <span className='info'>{appointment.details}</span></p>
-                    <button className='archiveBtn'>Archieve</button>
+                    <button className='archiveBtn' onClick={() => handleArchive(appointment._id)}>Archieve</button>
                 </div>
             ))}
         </div>
