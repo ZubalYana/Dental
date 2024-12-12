@@ -38,6 +38,7 @@ export default function AppointmentsScreen() {
                     <p className='appointmentInfo'>Department: <span className='info'>{appointment.department}</span></p>
                     <p className='appointmentInfo'>Date: <span className='info'>{formatDate(appointment.date)}</span></p>
                     <p className='appointmentInfo'>Details: <span className='info'>{appointment.details}</span></p>
+                    <button className='archiveBtn'>Archieve</button>
                 </div>
             ))}
         </div>
