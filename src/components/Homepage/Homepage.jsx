@@ -58,6 +58,56 @@ function Homepage() {
   }, [])
   console.log(feedbacks)
 
+  //numbers animation
+  const statsRef = useRef(null);
+  const [startAnimation, setStartAnimation] = useState(false);
+  const stats = [
+    { id: 1, value: 20, description: 'Course Published' },
+    { id: 2, value: 120, description: 'Qualified Staff' },
+    { id: 3, value: 550, description: 'Happy Patients' },
+    { id: 4, value: 20, description: 'Years Of Experience' },
+  ];
+  const [currentValues, setCurrentValues] = useState(stats.map(() => 0));
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    if (startAnimation) {
+      stats.forEach((stat, index) => {
+        const increment = Math.ceil(stat.value / 100);
+        let current = 0;
+
+        const interval = setInterval(() => {
+          current += increment;
+          if (current >= stat.value) {
+            current = stat.value;
+            clearInterval(interval);
+          }
+          setCurrentValues((prev) => {
+            const newValues = [...prev];
+            newValues[index] = current;
+            return newValues;
+          });
+        }, 30);
+      });
+    }
+  }, [startAnimation]);
+
+
   return (
     <div>
       {/* Video Popup */}
@@ -177,24 +227,14 @@ function Homepage() {
       </div>
 
       {/* Statistics */}
-      <div className="statisticScreen">
-        <div className="statisticEl">
-          <div className="statisticNumber">{20}</div>
-          <div className="statisticDescription">Course Published</div>
+      <div className="statisticScreen" ref={statsRef}>
+      {stats.map((stat, index) => (
+        <div className="statisticEl" key={stat.id}>
+          <div className="statisticNumber">{currentValues[index]}</div>
+          <div className="statisticDescription">{stat.description}</div>
         </div>
-        <div className="statisticEl">
-          <div className="statisticNumber">{120}</div>
-          <div className="statisticDescription">Qualified Staff</div>
-        </div>
-        <div className="statisticEl">
-          <div className="statisticNumber">{550}</div>
-          <div className="statisticDescription">Happy Patients</div>
-        </div>
-        <div className="statisticEl">
-          <div className="statisticNumber">{20}</div>
-          <div className="statisticDescription">Years Of Experience</div>
-        </div>
-      </div>
+      ))}
+    </div>
 
       {/* Easy Steps */}
       <div className="stepsScreen">
