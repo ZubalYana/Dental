@@ -20,12 +20,11 @@ mongoose.connect('mongodb+srv://zubalana0:bJJnl1be8qubMUQE@cluster0.xab5e.mongod
 .catch(err => {
     console.log(err)
 })
-app.use(express.static(path.join(__dirname, '../dist')));
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(cors());
+app.use(express.static(path.join(__dirname, '../dist')));
+
 
 //multer
 const storage = multer.diskStorage({
@@ -36,7 +35,17 @@ const storage = multer.diskStorage({
       cb(null, `${Date.now()}-${file.originalname}`);
     },
 });
-const upload = multer({ storage });
+const upload = multer({
+    storage,
+    limits: { fileSize: 10 * 1024 * 1024 },
+    fileFilter: (req, file, cb) => {
+        if (!file.mimetype.startsWith('image/')) {
+            return cb(new Error('Only image files are allowed'));
+        }
+        cb(null, true);
+    },
+});
+
 
 //mongoose schemas
 const emailSchema = new mongoose.Schema({
@@ -261,20 +270,26 @@ app.delete('/api/users/:id', async (req, res) => {
 });
 
 //register a doctor
-app.post('/api/registerDoctor', async (req, res) => {
+app.post('/api/registerDoctor', upload.single('image'), async (req, res) => {
     try {
-      const { name, specialty, image } = req.body;
-      if (!name || !specialty || !image) {
-        return res.status(400).json({ error: 'All fields are required' });
-      }
-      const doctor = new Doctor({ name, specialty, image });
-      await doctor.save();
-      res.status(200).json({ message: 'Doctor registered successfully' });
+        const { name, specialty } = req.body;
+        const image = req.file;
+        if (!name || !specialty || !image) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+        const doctor = new Doctor({ 
+            name, 
+            specialty, 
+            image: image.path 
+        });
+        await doctor.save();
+        res.status(200).json({ message: 'Doctor registered successfully' });
     } catch (error) {
-      console.error('Error registering doctor:', error);
-      res.status(500).json({ error: 'Failed to register doctor' });
+        console.error('Error registering doctor:', error);
+        res.status(500).json({ error: 'Failed to register doctor' });
     }
 });
+
 //get all the doctors
 app.get('/api/doctors', async (req, res) => {
     try {
