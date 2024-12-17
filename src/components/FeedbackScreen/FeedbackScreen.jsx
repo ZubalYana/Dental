@@ -53,6 +53,7 @@ export default function FeedbackScreen() {
   return (
     <div>
       <div className="feedbackScreen">
+        <div className="feedbackMessage"></div>
         <div className="feedbacksToCheckCon">
           <h2>New reviews to check:</h2>
           <div className="feedbacksToCheck">
