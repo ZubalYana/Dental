@@ -115,16 +115,20 @@ export default function FeedbackScreen() {
           },
           content: {
             color: 'black',
-            width: '300px',
+            width: '600px',
+            height: '200px',
             margin: 'auto',
-            padding: '20px',
+            padding: '30px',
             textAlign: 'center',
             borderRadius: '8px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           },
         }}
       >
-        <h2>Are you sure you want to reject this review?</h2>
-        <div>
+        <h2 className='popupTitle'>Are you sure you want to reject this review?</h2>
+        <div className='popupButtons'>
           <button onClick={handleReject} style={{ marginRight: '10px' }}>Yes</button>
           <button onClick={() => setIsPopupOpen(false)}>Cancel</button>
         </div>
