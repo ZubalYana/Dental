@@ -36,10 +36,12 @@ export default function FeedbackScreen() {
   const handleReject = () => {
     axios.delete(`http://localhost:3000/api/feedbacks/${currentReviewId}`).then(() => {
       setReviewsToCheck((prev) => prev.filter((review) => review._id !== currentReviewId));
-      setIsPopupOpen(false); 
-      setCurrentReviewId(null); 
+      setIsPopupOpen(false);
+      setCurrentReviewId(null);
+      showFeedbackMessage('Review rejected');
     });
   };
+  
 
   const handleAccept = (id) => {
     axios.put(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
@@ -49,6 +51,16 @@ export default function FeedbackScreen() {
       alert('Review accepted');
     });
   };
+
+  function showFeedbackMessage(feedbackMessageText) {
+    const message = document.querySelector('.feedbackMessage');
+    message.textContent = feedbackMessageText;
+    message.style.display = 'flex';
+    setTimeout(() => {
+      message.style.display = 'none'; 
+    }, 3000);
+  }
+  
 
   return (
     <div>
