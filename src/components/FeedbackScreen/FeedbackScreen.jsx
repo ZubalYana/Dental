@@ -46,11 +46,16 @@ export default function FeedbackScreen() {
   const handleAccept = (id) => {
     axios.put(`http://localhost:3000/api/feedbacks/${id}`).then(() => {
       setReviewsToCheck((prev) =>
-        prev.map((review) => (review._id === id ? { ...review, accepted: true } : review))
+        prev.filter((review) => review._id !== id)
       );
-      alert('Review accepted');
+      setReviewsAccepted((prev) => [
+        ...prev,
+        reviewsToCheck.find((review) => review._id === id),
+      ]);
+      showFeedbackMessage('Review accepted'); 
     });
   };
+  
 
   function showFeedbackMessage(feedbackMessageText) {
     const message = document.querySelector('.feedbackMessage');
