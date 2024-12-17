@@ -5,12 +5,14 @@ import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 import { faXmark, faCheck, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import defaultUserPic from '/default user picture.png';
 import axios from 'axios';
-
 import './FeedbackScreen.css';
+import Modal from 'react-modal'
+Modal.setAppElement('#root')
 
 export default function FeedbackScreen() {
   const [reviewsToCheck, setReviewsToCheck] = useState([]);
   const [reviewsAccepted, setReviewsAccepted] = useState([]);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/feedbacks').then((res) => {
@@ -42,7 +44,8 @@ export default function FeedbackScreen() {
 
   return (
         <div>
-                      <div className="feedbackScreen">
+            <div className="feedbackScreen">
+              
               <div className="feedbacksToCheckCon">
                 <h2>New reviews to check:</h2>
                 <div className="feedbacksToCheck">
@@ -55,7 +58,7 @@ export default function FeedbackScreen() {
                           className="reviewerImg" 
                         />
                         <div className="reviewActions">
-                          <div className='reviewAction rejectReview' onClick={() => handleReject(_id)}>
+                          <div className='reviewAction rejectReview' onClick={() => setIsPopupOpen(true)}>
                             <FontAwesomeIcon icon={faXmark} />
                           </div>
                           <div className='reviewAction acceptReview' onClick={() => handleAccept(_id)}>
@@ -69,7 +72,6 @@ export default function FeedbackScreen() {
                     </div>
                   ))}
                 </div>
-    
                 <h2>Accepted reviews:</h2>
                 <div className="acceptedReviews">
                   {reviewsAccepted.map(({ _id, name, img, feedback, rating }) => (
@@ -90,7 +92,6 @@ export default function FeedbackScreen() {
                     </div>
                   ))}
                 </div>
-    
               </div>
             </div>
         </div>

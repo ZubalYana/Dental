@@ -4,7 +4,7 @@ import axios from "axios";
 import AuthForm from '../AuthForm/AuthForm';
 import Header from '../Header/Header';
 import ServicesCard from '../servicesCard/servicesCard';
-import DoctorCard from '../doctorCard/doctorCard';
+import DoctorCard from '../doctorCard/DoctorCard';
 import MailForm from '../MailForm/MailForm';
 import aboutUsImg from '/about us screen img.png';
 import teethSvg from '../../assets/teeth.svg';
