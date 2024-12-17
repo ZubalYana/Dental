@@ -36,7 +36,6 @@ export default function FeedbackScreen() {
   const handleReject = () => {
     axios.delete(`http://localhost:3000/api/feedbacks/${currentReviewId}`).then(() => {
       setReviewsToCheck((prev) => prev.filter((review) => review._id !== currentReviewId));
-      alert('Review rejected');
       setIsPopupOpen(false); 
       setCurrentReviewId(null); 
     });
