@@ -39,6 +39,7 @@ export default function UsersScreen() {
         const updatedUsers = users.filter((user) => user._id !== selectedUserId);
         setUsers(updatedUsers);
         closeDeleteModal();
+        showFeedbackMessage('User deleted'); 
       })
       .catch((error) => {
         console.error('Error deleting user:', error);
@@ -46,8 +47,18 @@ export default function UsersScreen() {
       });
   };
 
+  function showFeedbackMessage(feedbackMessageText) {
+    const message = document.querySelector('.feedbackMessage');
+    message.textContent = feedbackMessageText;
+    message.style.display = 'flex';
+    setTimeout(() => {
+      message.style.display = 'none'; 
+    }, 3000);
+  }
+
   return (
     <div className="usersScreen screen">
+      <div className="feedbackMessage"></div>
       <h2>Registered users:</h2>
       <div className="usersCon">
         {users.map((user) => (
