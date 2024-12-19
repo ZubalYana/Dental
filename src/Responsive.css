@@ -574,6 +574,7 @@
         margin-top: 30px;
         flex-direction: column;
         align-items: center;
+        width: 100% !important;
     }
     .servicesCard{
         width: 100% !important;
@@ -649,9 +650,10 @@
         height: 120vh !important;
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 50px;
     }
     .stepsImg{
-        width: 300px;
+        width: 100% !important;
         margin-left: 0px !important;
         margin-top: 30px;
     }
@@ -684,6 +686,7 @@
     .makeAnAppointmentScreen{
         padding: 40px 30px !important;
         height: 150vh !important;
+        margin-top: 50px;
     }
     .makeAnAppointmentScreen .title{
         font-size: 32px !important;

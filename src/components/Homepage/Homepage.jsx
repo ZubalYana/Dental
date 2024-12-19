@@ -269,7 +269,7 @@ function Homepage() {
             </div>
         </div>
         <div className="stepsImgCon">
-          <img src={stepsImg} alt="stepsImg" style={{ width: '470px', marginLeft: '30px' }} />
+          <img src={stepsImg} alt="stepsImg" className='stepsImg' style={{ width: '470px', marginLeft: '30px' }} />
         </div>
       </div>
 
