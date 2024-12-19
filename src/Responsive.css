@@ -250,7 +250,7 @@
         height: 75vh !important;
     }
     .abousUsimg{
-        width: 320px;
+        width: 320px !important;
     }
     .beforeTitle{
         font-size: 12px;
@@ -527,7 +527,7 @@
         align-items: flex-start;
     }
     .abousUsimg{
-        width: 330px;
+        width: 330px !important;
         margin-top: 40px;
     }
     .beforeTitle{
@@ -609,6 +609,7 @@
     .doctorCard{
         width: 80% !important;
         height: 380px !important;
+        margin-right: 0px !important;
         margin-bottom: 40px;
     }
     .doctorCard_img{
@@ -851,7 +852,7 @@
         align-items: flex-start;
     }
     .abousUsimg{
-        width: 100%;
+        width: 100% !important;
     }
     .beforeTitle{
         font-size: 12px;
