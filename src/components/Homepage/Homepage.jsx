@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import "../../App.css"; 
 import axios from "axios";
+import '../../Responsive.css';
 import AuthForm from '../AuthForm/AuthForm';
 import Header from '../Header/Header';
 import ServicesCard from '../servicesCard/servicesCard';
@@ -163,7 +164,7 @@ function Homepage() {
 
       {/* About Us Section */}
       <div className="aboutUsScreen">
-        <img src={aboutUsImg} alt="aboutUsImg" className="aboutUsimg" data-aos="fade-down-right" style={{ width: '470px' }} />
+        <img src={aboutUsImg} alt="aboutUsImg" className="abousUsimg" data-aos="fade-down-right" style={{ width: '470px' }} />
         <div className="aboutUs_text">
           <div className="beforeTitle">About Us</div>
           <div className="title">Best Dental Clinic You Can Trust.</div>
